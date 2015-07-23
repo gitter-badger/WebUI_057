@@ -1,0 +1,72 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+div#container {
+	height: 100%;
+	width: 100%;
+	background: url('../img/bg.png');
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+div#logo {
+	height: 32%
+}
+div#logo_cont {
+	width: 370px;
+	margin: 0 auto;
+}
+div#logo img {
+	position: absolute;
+	top: -20px;
+	height: 244px;
+}
+div#init {
+	width: 100%;
+	height: 68%;
+	position: relative;
+}
+h1#title {
+	text-align: center;
+	width: 1200px;
+	top: 279px;
+	font: 55px 'Open Sans';
+	color: rgb(236, 229, 229);
+	margin: 0 auto 30px;
+	left: 71px;
+	line-height: 79px;
+	clear: both;
+	text-shadow: 0 4px 16px rgb(27, 27, 27);
+}
+div#form {
+	margin: 0 auto;
+	width: 250px;
+}
+div#form input {
+	height: 40px;
+	width: 250px;
+	background: rgb(228, 228, 228);
+	font-weight: 100;
+	font-size: 15px;
+	box-shadow: 0 3px 14px rgb(45, 45, 45);
+}
+div#form:first-child {
+	margin-bottom: 4px;
+}
+input#login {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+input#password {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+div#copyright {
+	position: absolute;
+	bottom: 12px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	text-shadow: 0 1px 4px rgb(23, 23, 23);
+}
