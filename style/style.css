@@ -38,14 +38,14 @@ ul#nav-right {
 }
 div#container {
 	min-height: 100%;
-	background: url('../img/bg.png');
+	background: #33424A url('../img/bg.png');
 	background-size: cover;
 	position: relative;
 	overflow: hidden;
 }
 div#logo {
 	min-height: 200px;
-	height: 32%
+	height: 32%;
 }
 div#logo_cont {
 	width: 370px;
@@ -65,7 +65,7 @@ div#init {
 h1#title {
 	text-align: center;
 	top: 279px;
-	font: 55px 'Open Sans';
+	font: 50px 'Open Sans';
 	color: rgb(236, 229, 229);
 	margin: 0 auto 30px;
 	left: 71px;
