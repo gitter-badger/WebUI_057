@@ -1,0 +1,17 @@
+nav#menu {
+    background-color:#1f3649;
+    border-color: #0D161D;
+    border-radius: 0;
+}
+nav#menu div#menu_cont {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    width: 1000px;
+}
+nav#menu img#logo {
+    position: relative;
+    height: 43px;
+    top: -12px;
+    left: 0;
+}
