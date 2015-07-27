@@ -1,0 +1,22 @@
+{
+  "name": "softserve_testing",
+  "version": "1.0.0",
+  "description": "SOFTSERVE TESTING",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shumeiko/WebUI_057.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shumeiko/WebUI_057/issues"
+  },
+  "homepage": "https://github.com/shumeiko/WebUI_057#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

@@ -3,9 +3,22 @@ body {
 }
 #nav {
 	background: #28323A;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+nav .navbar-toggle {
+	border: 1px solid white;
+}
+nav .navbar-toggle span {
+	background: white;
 }
 #nav a {
 	color: white;
+	padding-right: 13px;
+	padding-left: 13px;
 }
 #nav a:visited {
 	background: #28323A;
@@ -18,6 +31,10 @@ ul#nav-left {
 }
 ul#nav-right {
 	margin-right: 20px;
+}
+.main-container {
+	height: 100%;
+	padding: 50px 0 0;
 }
 div#container {
 	min-height: 100%;
@@ -42,6 +59,8 @@ div#logo img {
 div#init {
 	height: 68%;
 	position: relative;
+	min-height: 380px;
+	padding-bottom: 50px;
 }
 h1#title {
 	text-align: center;
