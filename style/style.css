@@ -1,3 +1,6 @@
+html, body {
+	height: 100%;
+}
 body {
 	font-family: Helvetica;
 }
@@ -57,15 +60,15 @@ div#logo img {
 	height: 244px;
 }
 div#init {
+	min-height: 380px;
 	height: 68%;
 	position: relative;
-	min-height: 380px;
 	padding-bottom: 50px;
 }
 h1#title {
 	text-align: center;
 	top: 279px;
-	font: 50px 'Open Sans';
+	font: 45px 'Open Sans';
 	color: rgb(236, 229, 229);
 	margin: 0 auto 30px;
 	left: 71px;
@@ -110,6 +113,7 @@ div#copyright {
 	text-align: center;
 	text-shadow: 0 1px 4px rgb(23, 23, 23);
 }
+/*
 
 p.session  {
 	color:white;
@@ -139,4 +143,4 @@ div.statistic {
 }
 .container-fluid {
 	max-width: 1600px
-}
+}*/
