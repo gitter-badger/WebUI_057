@@ -131,3 +131,12 @@ div.statistic {
 	border: 2px solid red;
 	border-radius: 50%;
 }
+@media all and (max-width: 767px){
+	table td ,
+	table th {
+		display: block
+	}
+}
+.container-fluid {
+	max-width: 1600px
+}
