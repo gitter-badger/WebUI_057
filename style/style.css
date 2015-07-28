@@ -29,12 +29,12 @@ nav .navbar-toggle span {
 #nav a:hover {
 	background: #02578D;
 }
-ul#nav-left {
-	margin-left: 20px;
-}
-ul#nav-right {
-	margin-right: 20px;
-}
+/*ul#nav-left {*/
+	/*margin-left: 20px;*/
+/*}*/
+/*ul#nav-right {*/
+	/*margin-right: 20px;*/
+/*}*/
 .main-container {
 	height: 100%;
 	padding: 50px 0 0;
@@ -113,34 +113,71 @@ div#copyright {
 	text-align: center;
 	text-shadow: 0 1px 4px rgb(23, 23, 23);
 }
-/*
 
-p.session  {
-	color:white;
-	font-size:40px;
-	text-align:center;
-
-}
-
-select#smth {
-	float: right;
-
-}
-table.table {
-	background-color: white;
-}
-div.statistic {
-    width:100px;
-	height:100px;
-	border: 2px solid red;
-	border-radius: 50%;
-}
 @media all and (max-width: 767px){
 	table td ,
 	table th {
 		display: block
 	}
 }
+
 .container-fluid {
-	max-width: 1600px
-}*/
+	min-width: 320px;
+	max-width: 1380px;
+}
+
+.logo {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+.logo-img {
+	height: 100%;
+	display: block;
+}
+
+.main-footer {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.false-nav {
+	height: 65px;
+}
+
+.test-progress {
+	background: #fff;
+	margin-top: 15px;
+}
+
+.test-pagination .done a{
+	background-color: mediumseagreen;
+	color: #fff;
+
+}
+.test-pagination .done a:hover {
+	border-color: green;
+	background-color: green;
+	color: #fff;
+}
+.test-pagination .wrong a{
+	background-color: #D9534F;
+	color: #fff;
+
+}
+.test-pagination .wrong a:hover {
+	border-color: #d92a25;
+	background-color: #d92a25;
+	color: #fff;
+}
+.test-question-form {
+	padding: 15px 0;
+}
+
+.answer-test {
+	display: inline-block;
+}
+
+.answer-checkbox:checked + span .answer-test{
+	color: blue;
+}
