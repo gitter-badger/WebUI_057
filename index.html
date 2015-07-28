@@ -12,8 +12,6 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script/example.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
-
-
 </head>
 <body>
 
@@ -60,7 +58,7 @@
 						<input id="password" type="password" class="form-control"
 							   placeholder="Пароль">
 					</label>
-					<button id="btn-log-in" class="btn btn-danger"><span
+					<button id="btn-log-in" class="btn btn-danger" onclick="log()"><span
 							class="glyphicon glyphicon-log-in"></span>
 						Увійти</button>
 				</div>
@@ -74,6 +72,45 @@
 				return false;
 			}
 		};
+	</script>
+	<script type="text/javascript">
+		var inputId = document.getElementById('login'),
+			inputPassword = document.getElementById('password');
+
+		function log() {
+			if (inputId.value === "admin" && inputPassword.value === 'dtapi_admin') {
+				request();
+			} else {
+			}
+		}
+
+		function request() {
+			var BASE_URL = "http://ec2-54-69-82-91.us-west-2.compute.amazonaws.com";
+			var user = {
+				username: "admin",
+				//username: "vasia",
+				password: "dtapi_admin"
+			};
+			$.ajax({
+				contentType: "application/json; charset=utf-8",
+				url: BASE_URL + "/login/index",
+				type: "POST",
+				timeout: 3000,
+				dataType: 'json',
+				data: JSON.stringify(user),
+				success: function(resp) {
+					console.log(resp);
+				},
+				error: function(xhr, status) {
+					console.log("Error: " +status);
+				},
+				complete: function(resp) {
+					console.log('Complete: ' +status);
+				}
+			}); // $.ajax
+
+			alert('You are here');
+		}
 	</script>
 	
 </body>

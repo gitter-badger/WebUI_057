@@ -6,6 +6,12 @@ nav#menu {
     border-color: #0D161D;
     border-radius: 0;
 }
+li:hover {
+    background: #181010;
+}
+li.active_li {
+    background: #182331;
+}
 nav#menu div#menu_cont {
     margin-right: auto;
     margin-left: auto;
