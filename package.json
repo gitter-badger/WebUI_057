@@ -1,0 +1,32 @@
+{
+  "name": "webui_057",
+  "version": "0.0.1",
+  "description": "Our main project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterioss/WebUI_057.git"
+  },
+  "author": "webui_057",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misterioss/WebUI_057/issues"
+  },
+  "homepage": "https://github.com/misterioss/WebUI_057#readme",
+  "devDependencies": {
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csslint": "^0.1.5",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0"
+  }
+}
