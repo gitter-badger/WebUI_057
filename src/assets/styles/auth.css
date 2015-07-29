@@ -88,6 +88,24 @@ div#form input {
 	font-size: 15px;
 	box-shadow: 0 3px 14px rgb(45, 45, 45);
 }
+#form label {
+	position: relative;
+}
+#span_login, #span_password {
+	margin: 0;
+	position: absolute;
+	left: 257px;
+	display: inline-block;
+	width: 200px;
+	color: #D9534F;
+	font: 17px Helvetica, sans-serif;
+}
+#span_login {
+	top: 12px;
+}
+span#span_password {
+	top: 10px;
+}
 div#form:first-child {
 	margin-bottom: 4px;
 }
