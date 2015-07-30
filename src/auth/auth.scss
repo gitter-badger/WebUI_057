@@ -5,6 +5,7 @@ body {
 	font-family: Helvetica;
 }
 .authComponent {
+	height: 100%;
 	nav {
 		background: #28323A;
 		position: absolute;
@@ -15,6 +16,9 @@ body {
 		border-radius: 0;
 		.navbar-toggle {
 			border: 1px solid white;
+			&:hover {
+				background: #02578D;
+			}
 			span {
 				background: white;
 			}
@@ -93,6 +97,17 @@ body {
 						font-weight: 100;
 						font-size: 15px;
 						box-shadow: 0 3px 14px rgb(45, 45, 45);
+						&:focus {
+							border:2px solid blue;
+						}
+					}
+					#login {
+						border-bottom-left-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+					#password {
+						border-top-left-radius: 0;
+						border-top-right-radius: 0;
 					}
 					#span_login, #span_password, .spanSubmit {
 						margin: 0;
@@ -103,55 +118,44 @@ body {
 						color: #D9534F;
 						font: 17px Helvetica, sans-serif;
 					}
+					#span_login {
+						top: 12px;
+					}
+					#span_password {
+						top: 10px;
+					}
+					#submit {
+						position: relative;
+						#btn-log-in {
+							position: relative;
+							width: 250px;
+							height: 40px;
+							margin-top: 10px;
+							box-shadow: 0 3px 14px rgb(45, 45, 45);
+							img {
+								position: absolute;
+							}
+						}
+						.spanSubmit {
+							width: 220px;
+							right: 0;
+							top: 22px;
+						}
+					}
+					&:first-child {
+						margin-bottom: 4px;
+					}
+
 				}
 			}
+			#copyright {
+				position: absolute;
+				bottom: 12px;
+				color: white;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 1px 4px rgb(23, 23, 23);
+			}
 		}
-	}
-
-	#span_login {
-		top: 12px;
-	}
-	span#span_password {
-		top: 10px;
-	}
-	#submit {
-		position: relative;
-	}
-	.spanSubmit {
-		width: 220px;
-		right: 0;
-		top: 22px;
-	}
-	div#form:first-child {
-		margin-bottom: 4px;
-	}
-	input:focus {
-		border:2px solid blue;
-	}
-	input#login {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-	input#password {
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-	}
-	button#btn-log-in {
-		position: relative;
-		width: 250px;
-		height: 40px;
-		margin-top: 10px;
-		box-shadow: 0 3px 14px rgb(45, 45, 45);
-	}
-	button#btn-log-in img {
-		position: absolute;
-	}
-	div#copyright {
-		position: absolute;
-		bottom: 12px;
-		color: white;
-		width: 100%;
-		text-align: center;
-		text-shadow: 0 1px 4px rgb(23, 23, 23);
 	}
 }

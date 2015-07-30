@@ -17,6 +17,8 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
 					$scope.checkResponse(data);
 				})
 				.error(function(data, status) {
+					alert($window.location.href);
+					alert("Error");
 					$scope.status = status || "Запит відхилено.";
 					$scope.data = data;
 				});
@@ -27,7 +29,7 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
 				$scope.removeAlarm();
 				setTimeout(function() {
 					$window.location.href = "../admin/admin.html";
-				}, 4000);
+				}, 2500);
 			} else {
 				$scope.generateSpanElem();
 				$scope.dataLoading = false;
@@ -40,7 +42,7 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
 			var span = document.createElement("span");
 			span.innerHTML = "Невірний логін або пароль!";
 			span.classList.add('spanSubmit');
-			document.getElementById('submit').insertAdjacentElement("beforeEnd", span);
+			document.getElementById('submit').appendChild(span);
 		};
 
 		$scope.removeAlarm = function() {

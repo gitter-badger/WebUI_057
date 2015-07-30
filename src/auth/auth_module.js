@@ -1,1 +1,1 @@
-var auth = angular.module("authorization", []);
+var auth = angular.module("authorization", ["ui.router"]);
