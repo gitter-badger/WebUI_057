@@ -8,6 +8,10 @@ Our main project
 ```
     $ bower install
 ```
+* Start Gulp watcher
+```
+    $ gulp
+```
 * Build project
 ```
     $ gulp build

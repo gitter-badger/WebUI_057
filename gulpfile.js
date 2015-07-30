@@ -20,7 +20,8 @@ var dist = "dist",
 
 var vendorSrcJs = [
 	"bower_components/angular/angular.min.js",
-	"bower_components/angular-bootstrap/ui-bootstrap.js",
+	"bower_components/angular-ui-router/release/angular-ui-router.min.js",
+	"bower_components/angular-bootstrap/ui-bootstrap.min.js",
 	"bower_components/bootstrap/dist/js/bootstrap.min.js"
 ];
 
@@ -30,7 +31,6 @@ var vendorSrcCss = [
 ];
 
 // Default task
-
 gulp.task("default", ["watch"]);
 
 
@@ -52,7 +52,7 @@ gulp.task("html", function() {
 
 // JS task
 gulp.task("js", function() {
-    gulp.src(src + "/*.js")
+    gulp.src(src + "/**/*.js")
         .pipe(concat("app.js"))
         .pipe(gulp.dest(distDev + "/js"))
 
@@ -73,10 +73,10 @@ gulp.task("vendor", function() {
 
 // Watcher
 gulp.task("watch", function() {
-	gulp.watch(src + "/**/*.scss", ["sass"])
-	gulp.watch(src + "/**/*.js", ["js"])
-	gulp.watch(src + "/index.html", ["html"])
-})
+	gulp.watch(src + "/**/*.scss", ["sass"]);
+	gulp.watch(src + "/**/*.js", ["js"]);
+	gulp.watch(src + "/index.html", ["html"]);
+});
 
 
 // Build Developer Version
@@ -124,6 +124,5 @@ gulp.task("build_production", function() {
 			.pipe(concat("vendor.min.js"))
 			.pipe(uglify())
 			.pipe(gulp.dest(dist + "/vendor"))
-
 	);
 });
