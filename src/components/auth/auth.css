@@ -4,6 +4,12 @@ html, body {
 body {
 	font-family: Helvetica;
 }
+.main {
+	height: 100%;
+}
+.authComponent {
+	height: 100%;
+}
 #nav {
 	background: #28323A;
 	position: absolute;
@@ -11,9 +17,13 @@ body {
 	left: 0;
 	top: 0;
 	z-index: 100;
+	border-radius: 0;
 }
 nav .navbar-toggle {
 	border: 1px solid white;
+}
+nav .navbar-toggle:hover {
+	background: #02578D;
 }
 nav .navbar-toggle span {
 	background: white;
@@ -29,10 +39,15 @@ nav .navbar-toggle span {
 #nav a:hover {
 	background: #02578D;
 }
+#nav a:focus {
+	background: #28323A;
+}
 ul#nav-left {
 	margin-left: 20px;
+	margin-right: 20px;
 }
 ul#nav-right {
+	margin-left: 20px;
 	margin-right: 20px;
 }
 .main-container {
@@ -41,7 +56,7 @@ ul#nav-right {
 }
 div#container {
 	min-height: 100%;
-	background: #33424A url('../images/bg.png');
+	background: #33424A url('../assets/images/bg.png');
 	background-size: cover;
 	position: relative;
 	overflow: hidden;
@@ -68,7 +83,7 @@ div#init {
 h1#title {
 	text-align: center;
 	top: 279px;
-	font: 45px 'Open Sans';
+	font: 40px 'Open Sans';
 	color: rgb(236, 229, 229);
 	margin: 0 auto 30px;
 	left: 71px;
@@ -88,8 +103,37 @@ div#form input {
 	font-size: 15px;
 	box-shadow: 0 3px 14px rgb(45, 45, 45);
 }
+#form label {
+	position: relative;
+}
+#span_login, #span_password, .spanSubmit {
+	margin: 0;
+	position: absolute;
+	left: 257px;
+	display: inline-block;
+	width: 200px;
+	color: #D9534F;
+	font: 17px Helvetica, sans-serif;
+}
+#span_login {
+	top: 12px;
+}
+span#span_password {
+	top: 10px;
+}
+#submit {
+	position: relative;
+}
+.spanSubmit {
+	width: 220px;
+	right: 0;
+	top: 22px;
+}
 div#form:first-child {
 	margin-bottom: 4px;
+}
+input:focus {
+	border:2px solid blue;
 }
 input#login {
 	border-bottom-left-radius: 0;
@@ -100,10 +144,14 @@ input#password {
 	border-top-right-radius: 0;
 }
 button#btn-log-in {
+	position: relative;
 	width: 250px;
 	height: 40px;
 	margin-top: 10px;
 	box-shadow: 0 3px 14px rgb(45, 45, 45);
+}
+button#btn-log-in img {
+	position: absolute;
 }
 div#copyright {
 	position: absolute;

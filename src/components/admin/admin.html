@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="ui.bootstrap.demo">
+<html ng-app="admin">
 <head>
 	<title>d-tester</title>
 	<meta charset="utf-8">
@@ -8,13 +8,12 @@
 	<script type="text/javascript" src="script/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/example.js"></script>
-	<link rel="stylesheet" type="text/css" href="../assets/styles/admin.css">
+	<link rel="stylesheet" type="text/css" href="admin.css">
 </head>
 <body>
-<div>
+<div class="adminComponent" ng-controller="AdminCtrl">
 	<!-- menu begin -->
-	<nav class="navbar navbar-inverse" id="menu">
+	<!--<nav class="navbar navbar-inverse" id="menu">
 		<div class="container-fluid" id="menu_cont">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">
@@ -35,14 +34,62 @@
 				</li>
 			</ul>
 		</div>
+	</nav>-->
+	<nav id="nav" class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul id="nav-left" class="nav navbar-nav">
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-home"></span>&nbsp;
+							<span class="hidden-sm">Головна</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">Групи</a>
+					</li>
+					<li>
+						<a href="#">Предмети</a>
+					</li>
+					<li>
+						<a href="#">Спеціальності</a>
+					</li>
+					<li>
+						<a href="#">Факультети</a>
+					</li>
+				</ul>
+				<ul id="nav-right" class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-log-out"></span>&nbsp;
+							<span class="hidden-sm">Вийти</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-question-sign"></span>&nbsp;
+							<span class="hidden-sm">Допомога</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 	<!-- menu end -->
 
-	<div style="width:1000px;margin:0 auto">
 		<!-- upper section -->
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">
-				<!-- left -->
+			<!-- left -->
 				<h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
 				<hr>
 				<ul class="nav nav-stacked">
@@ -58,7 +105,7 @@
 			</div><!-- /span-3 -->
 			<div class="col-sm-9">
 
-				<!-- column 2 -->
+			<!-- column 2 -->
 				<h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>
 
 				<hr>
@@ -147,8 +194,8 @@
 		</div><!--/row-->
 
 
-	</div><!--/container--></div>
-
+	</div><!--/container-->
+</div>
 <script type="text/javascript">
 	document.onmousedown = document.onselectstart = function(e) {
 		if (e.target.tagName === 'BUTTON') {
