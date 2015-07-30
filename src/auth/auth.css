@@ -35,8 +35,10 @@ nav .navbar-toggle span {
 }
 ul#nav-left {
 	margin-left: 20px;
+	margin-right: 20px;
 }
 ul#nav-right {
+	margin-left: 20px;
 	margin-right: 20px;
 }
 .main-container {
@@ -120,6 +122,9 @@ span#span_password {
 }
 div#form:first-child {
 	margin-bottom: 4px;
+}
+input:focus {
+	border:2px solid blue;
 }
 input#login {
 	border-bottom-left-radius: 0;

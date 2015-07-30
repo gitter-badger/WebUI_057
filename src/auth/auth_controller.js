@@ -25,7 +25,9 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
 		$scope.checkResponse = function(data) {
 			if (data.response === "ok") {
 				$scope.removeAlarm();
-				$window.location.href = "../admin/admin.html";
+				setTimeout(function() {
+					$window.location.href = "../admin/admin.html";
+				}, 4000);
 			} else {
 				$scope.generateSpanElem();
 				$scope.dataLoading = false;
