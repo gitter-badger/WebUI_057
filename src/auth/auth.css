@@ -45,7 +45,7 @@ ul#nav-right {
 }
 div#container {
 	min-height: 100%;
-	background: #33424A url('../images/bg.png');
+	background: #33424A url('../assets/images/bg.png');
 	background-size: cover;
 	position: relative;
 	overflow: hidden;
@@ -110,6 +110,14 @@ div#form input {
 span#span_password {
 	top: 10px;
 }
+#submit {
+	position: relative;
+}
+.spanSubmit {
+	width: 220px;
+	right: 0;
+	top: 22px;
+}
 div#form:first-child {
 	margin-bottom: 4px;
 }
@@ -122,10 +130,14 @@ input#password {
 	border-top-right-radius: 0;
 }
 button#btn-log-in {
+	position: relative;
 	width: 250px;
 	height: 40px;
 	margin-top: 10px;
 	box-shadow: 0 3px 14px rgb(45, 45, 45);
+}
+button#btn-log-in img {
+	position: absolute;
 }
 div#copyright {
 	position: absolute;
