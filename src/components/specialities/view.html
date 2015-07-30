@@ -1,0 +1,36 @@
+<div style="margin-top: 50px" class="container-fluid" ng-controller="SpecialityListCtrl">
+    <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <div class="row ">
+            <h1>Спеціальності</h1>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-md mybutton"><span class="glyphicon glyphicon-circle-arrow-up"></span>Добавити спеціальність</button>
+            <input type="text" class="search-query mysearch" ng-model="query" placeholder="Search">
+        </div>
+
+
+        <div class="row">
+            <table class="table table-hover table-bordered table-responsive">
+                <thead>
+                <tr>
+                    <th><span class="visible-xs"><b>1: </b></span>№</th>
+                    <th><span class="visible-xs"><b>1: </b></span><a href='' ng-click="sort('speciality_name')">Спеціальність</a></th>
+                    <th><span class="visible-xs"><b>2: </b></span>Опис</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="speciality in specialities | filter:query | orderBy:sortField:reverse">
+                    <td>{{$index + 1}}</td>
+                    <td><span class="visible-xs"><b>1: </b></span>{{speciality.speciality_name}}</td>
+                    <td><span class="visible-xs"><b>1: </b></span>{{speciality.speciality_description}}</td>
+                    <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove-circle"></span></button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
