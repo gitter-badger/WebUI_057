@@ -31,7 +31,7 @@ src/
 ---styles
 -auth
 -user
-components/
+-components/
 ---faculties
 ---students
 ---subjects
