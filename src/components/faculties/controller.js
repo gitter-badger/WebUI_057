@@ -1,9 +1,9 @@
 'use strict';
 
-var subjectCtrl = angular.module('subjectCtrl', []);
-subjectCtrl.controller('SubjectsListCtrl', ['$scope', '$http', function ($scope, $http) {
-    $http.get(BASE_URL + 'subject/getRecords').success(function (data) {
-        $scope.subjects = data;
+var facultyCtrl = angular.module('facultyCtrl', []);
+facultyCtrl.controller('FacultiesListCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http.get(BASE_URL + 'faculty/getRecords').success(function (data) {
+        $scope.faculties = data;
     });
 
     $scope.sortField = undefined;
