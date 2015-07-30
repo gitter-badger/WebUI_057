@@ -10,7 +10,7 @@ var ssTest = angular.module('ssTest', [
 ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider.state('subjects', {
-        url: '/',
-        templateUrl: 'http://dtapi.local/~pupkin/components/subjects/view.html'
+        url: '/subjects',
+        templateUrl: 'http://dtapi.local/~pupkin/src/components/subjects/view.html'
     })
 }]);
