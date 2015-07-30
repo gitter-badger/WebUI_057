@@ -11,6 +11,7 @@ body {
 	left: 0;
 	top: 0;
 	z-index: 100;
+	border-radius: 0;
 }
 nav .navbar-toggle {
 	border: 1px solid white;
@@ -28,6 +29,9 @@ nav .navbar-toggle span {
 }
 #nav a:hover {
 	background: #02578D;
+}
+#nav a:focus {
+	background: #28323A;
 }
 ul#nav-left {
 	margin-left: 20px;
@@ -68,7 +72,7 @@ div#init {
 h1#title {
 	text-align: center;
 	top: 279px;
-	font: 45px 'Open Sans';
+	font: 40px 'Open Sans';
 	color: rgb(236, 229, 229);
 	margin: 0 auto 30px;
 	left: 71px;
@@ -91,7 +95,7 @@ div#form input {
 #form label {
 	position: relative;
 }
-#span_login, #span_password {
+#span_login, #span_password, .spanSubmit {
 	margin: 0;
 	position: absolute;
 	left: 257px;
