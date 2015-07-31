@@ -1,8 +1,8 @@
 'use strict';
 
-var subjectCtrl = angular.module('subjectCtrl', []);
-subjectCtrl.controller('SubjectsListCtrl', ['$scope', '$http', function ($scope, $http) {
-    $http.get(BASE_URL + 'subject/getRecords').success(function (data) {
+var groupCtrl = angular.module('group', []);
+groupCtrl.controller('GroupsListCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http.get(BASE_URL + 'group/getRecords').success(function (data) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
             var obj = {};
@@ -15,9 +15,9 @@ subjectCtrl.controller('SubjectsListCtrl', ['$scope', '$http', function ($scope,
         $scope.data = arr;
     });
 
-    $scope.title1 = 'Предмети';
-    $scope.title2 = 'Предмет';
-    $scope.name = 'subject_name';
+    $scope.title1 = 'Групи';
+    $scope.title2 = 'Група';
+    $scope.name = 'group_name';
 
     $scope.sortField = undefined;
     $scope.reverse = false;

@@ -1,8 +1,8 @@
 'use strict';
 
-var specialityCtrl = angular.module('specialityCtrl', []);
-specialityCtrl.controller('SpecialitiesListCtrl', ['$scope', '$http', function ($scope, $http) {
-    $http.get(BASE_URL + 'speciality/getRecords').success(function (data) {
+var facultyCtrl = angular.module('faculty', []);
+facultyCtrl.controller('FacultiesListCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http.get(BASE_URL + 'faculty/getRecords').success(function (data) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
             var obj = {};
@@ -15,9 +15,9 @@ specialityCtrl.controller('SpecialitiesListCtrl', ['$scope', '$http', function (
         $scope.data = arr;
     });
 
-    $scope.title1 = 'Спеціальності';
-    $scope.title2 = 'Спеціальність';
-    $scope.name = 'speciality_name';
+    $scope.title1 = 'Факультети';
+    $scope.title2 = 'Факультет';
+    $scope.name = 'faculty_name';
 
     $scope.sortField = undefined;
     $scope.reverse = false;

@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             <button type="button" class="btn btn-primary btn-md mybutton"><span class="glyphicon glyphicon-circle-arrow-up"></span>Добавити {{title1}}</button>
-            <input type="text" class="search-query mysearch" ng-model="query" placeholder="Search">
+            <input type="text" class="search-query mysearch" ng-model="query" placeholder="Пошук">
         </div>
         <div class="row">
             <table class="table table-hover table-bordered table-responsive">
@@ -19,7 +19,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="obj in data | filter:query | orderBy:sortField:reverse">
+                <tr ng-repeat="obj in data | filter:query | orderBy:sortField:expression">
                     <td>{{$index + 1}}</td>
                     <td ng-repeat="key in obj"><span class="visible-xs"><b>1: </b></span>{{key}}</td>
                     <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></td>
