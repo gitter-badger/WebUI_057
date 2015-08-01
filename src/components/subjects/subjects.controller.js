@@ -17,7 +17,7 @@ subjectCtrl.controller('SubjectsListCtrl', ['$scope', '$http', function ($scope,
 
     $scope.title1 = 'Предмети';
     $scope.title2 = 'Предмет';
-    $scope.name = 'subject_name';
+    $scope.sortcol = 0;
 
     $scope.sortField = undefined;
     $scope.reverse = false;

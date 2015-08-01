@@ -5,10 +5,10 @@ groupCtrl.controller('GroupsListCtrl', ['$scope', '$http', function ($scope, $ht
     $http.get(BASE_URL + 'group/getRecords').success(function (data) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
-            var obj = {};
+            var obj = [];
             for (var key in data[i]) {
                 if (key.slice(key.length-3, key.length) == '_id') continue;
-                obj[key] = data[i][key];
+                obj.push(data[i][key]);
             }
             arr.push(obj);
         }
@@ -17,7 +17,7 @@ groupCtrl.controller('GroupsListCtrl', ['$scope', '$http', function ($scope, $ht
 
     $scope.title1 = 'Групи';
     $scope.title2 = 'Група';
-    $scope.name = 'group_name';
+    $scope.sortcol = 0;
 
     $scope.sortField = undefined;
     $scope.reverse = false;

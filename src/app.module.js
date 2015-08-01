@@ -3,49 +3,26 @@
 /* Module */
 var ssTest = angular.module('ssTest', [
     'ui.router',
-    'subject',
-    'faculty',
-    'speciality',
-    'group'
+    'authorization',
+    'admin'
 ]);
 
 ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
-        /* .state('login', {
+        .state('auth', {
             url: '/',
-            templateUrl: BASE_URL_FOR_ROUTER + 'auth/view.html',
+            templateUrl: URL_FOR_ROUTER + 'auth/auth.html',
             controller: 'AuthorizationCtrl'
         })
         .state('admin', {
             url: '/homeAdmin',
-            templateUrl: BASE_URL_FOR_ROUTER + 'admin/view.html',
-            controller: 'AdminCtrl'
-        })
+            templateUrl: URL_FOR_ROUTER + 'admin/admin.html'
+        })/*
         .state('user', {
             url: '/homeUser',
             templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
         })*/
-        .state('groups', {
-            url: '/groups',
-            templateUrl: TABLE_TEMPLATES_URL,
-            controller: 'GroupsListCtrl'
-        })
-        .state('subjects', {
-            url: '/subjects',
-            templateUrl: TABLE_TEMPLATES_URL,
-            controller: 'SubjectsListCtrl'
-        })
-        .state('specialities', {
-            url: '/specialities',
-            templateUrl: TABLE_TEMPLATES_URL,
-            controller: 'SpecialitiesListCtrl'
-        })
-        .state('faculties', {
-            url: '/faculties',
-            templateUrl: TABLE_TEMPLATES_URL,
-            controller: 'FacultiesListCtrl'
-        })
 }]);
 
 

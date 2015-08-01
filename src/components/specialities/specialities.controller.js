@@ -5,10 +5,10 @@ specialityCtrl.controller('SpecialitiesListCtrl', ['$scope', '$http', function (
     $http.get(BASE_URL + 'speciality/getRecords').success(function (data) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
-            var obj = {};
+            var obj = [];
             for (var key in data[i]) {
                 if (key.slice(key.length-3, key.length) == '_id') continue;
-                obj[key] = data[i][key];
+                obj.push(data[i][key]);
             }
             arr.push(obj);
         }
@@ -17,7 +17,7 @@ specialityCtrl.controller('SpecialitiesListCtrl', ['$scope', '$http', function (
 
     $scope.title1 = 'Спеціальності';
     $scope.title2 = 'Спеціальність';
-    $scope.name = 'speciality_name';
+    $scope.sortcol = 0;
 
     $scope.sortField = undefined;
     $scope.reverse = false;

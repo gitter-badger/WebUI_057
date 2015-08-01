@@ -5,10 +5,10 @@ facultyCtrl.controller('FacultiesListCtrl', ['$scope', '$http', function ($scope
     $http.get(BASE_URL + 'faculty/getRecords').success(function (data) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
-            var obj = {};
+            var obj = [];
             for (var key in data[i]) {
                 if (key.slice(key.length-3, key.length) == '_id') continue;
-                obj[key] = data[i][key];
+                obj.push(data[i][key]);
             }
             arr.push(obj);
         }

@@ -12,14 +12,14 @@
                 <thead>
                 <tr>
                     <th><span class="visible-xs"><b>1: </b></span>№</th>
-                    <th><span class="visible-xs"><b>1: </b></span><a href='' ng-click="sort(name)">{{title2}}</a></th>
+                    <th><span class="visible-xs"><b>1: </b></span><a href='' ng-click="sort(sortcol)">{{title2}}</a></th>
                     <th><span class="visible-xs"><b>2: </b></span>Опис</th>
                     <th></th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="obj in data | filter:query | orderBy:sortField:expression">
+                <tr ng-repeat="obj in data | filter:query | orderBy:sortField:reverse">
                     <td>{{$index + 1}}</td>
                     <td ng-repeat="key in obj"><span class="visible-xs"><b>1: </b></span>{{key}}</td>
                     <td><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></td>

@@ -1,80 +1,175 @@
-<!doctype html>
-<html ng-app="ui.bootstrap.demo">
+<!--<!doctype html>
+<html ng-app="admin">
 <head>
 	<title>d-tester</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet"
-			href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script type="text/javascript" src="script/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/example.js"></script>
-	<link rel="stylesheet" type="text/css" href="../assets/styles/admin.css">
+			href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="admin.css">
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="admin.module.js"></script>
+	<script src="admin.controller.js"></script>
+	<style>
+		.navbar-brand img {
+			height: 42px;
+			position: relative;
+			bottom: 11px;
+		}
+		h3.admin-title {
+			padding-left: 42px;
+			position: relative;
+		}
+		h3.admin-title i {
+			position: absolute;
+			left: 9px;
+			top: -2px;
+		}
+		h3 span {
+			font-size: 17px;
+		}
+		.cal table, .cal-sm table {
+			margin-bottom: 0;
+		}
+		.cal th, .cal-sm th {
+			color: #337AB7;;
+		}
+		.cal th, .cal td, .cal-sm th, .cal-sm td {
+			text-align: center;
+		}
+		table.statistics {
+			height: 225px;
+		}
+		table.statistics tr td {
+			vertical-align: middle;
+			padding-left: 15px;
+		}
+		table span {
+			font-size: 14px !important;
+		}
+		.side-bar button {
+			height: 45px !important;
+		}
+		/*#cal th, #cal td {
+			border: 1px solid #79B77D;
+		}*/
+	</style>
 </head>
-<body>
-<div>
-	<!-- menu begin -->
-	<nav class="navbar navbar-inverse" id="menu">
-		<div class="container-fluid" id="menu_cont">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">
-					<img src="../assets/images/logo_admin.png" id="logo">
-				</a>
-			</div>
-			<div>
-				<ul class="nav navbar-nav">
-					<li><a href="#">Головна</a></li>
-					<li><a href="#">Факультети</a></li>
-					<li><a href="#">Предмети</a></li>
-					<li><a href="#">Групи</a></li>
+<body>-->
+	<div class="adminComponent" ng-controller="AdminCtrl">
+		<!-- menu begin -->
+		<!--<nav class="navbar navbar-inverse" id="menu">
+			<div class="container-fluid" id="menu_cont">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">
+						<img src="../assets/images/logo_admin.png" id="logo">
+					</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><a href="#">Головна</a></li>
+						<li><a href="#">Факультети</a></li>
+						<li><a href="#">Предмети</a></li>
+						<li><a href="#">Групи</a></li>
+					</ul>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-user"></span> Вийти</a>
+					</li>
 				</ul>
 			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="#"><span class="glyphicon glyphicon-user"></span> Вийти</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!-- menu end -->
+		</nav>-->
+		<!--<nav id="nav" class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+						<a class="navbar-brand" href="#">
+							<img alt="Brand" src="../assets/images/logo_admin.png" height="28px">
+						</a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul id="nav-left" class="nav navbar-nav">
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-home"></span>&nbsp;
+								<span class="hidden-sm">Головна</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">Групи</a>
+						</li>
+						<li>
+							<a href="#">Предмети</a>
+						</li>
+						<li>
+							<a href="#">Спеціальності</a>
+						</li>
+						<li>
+							<a href="#">Факультети</a>
+						</li>
+					</ul>
+					<ul id="nav-right" class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-log-out"></span>&nbsp;
+								<span class="hidden-sm">Вийти</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-question-sign"></span>&nbsp;
+								<span class="hidden-sm">Допомога</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>-->
+		<!-- menu end -->
 
-	<div style="width:1000px;margin:0 auto">
-		<!-- upper section -->
-		<div class="row">
-			<div class="col-sm-3">
-				<!-- left -->
-				<h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
+			<!-- upper section -->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+				<h3 class="admin-title"><i class="glyphicon glyphicon-king"></i> Сторінка
+					адміністратора</h3>
 				<hr>
-				<ul class="nav nav-stacked">
-					<li><a href="#"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-link"></i> Links</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
-					<li><a href="#"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
-				</ul>
-				<hr>
-			</div><!-- /span-3 -->
-			<div class="col-sm-9">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-5 col-md-3">
+					<!-- left -->
+					<!--<h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
+					<hr>-->
+					<!--<ul class="btn-group-vertical">
+						<li class="btn btn-default"><a href="#" class="btn btn-default">Список тестів</a></li>
+						<li><a href="#" class="btn btn-default">Додати тест</a></li>
+						<li><a href="#" class="btn btn-default">Студенти</a></li>
+						<li><a href="#" class="btn btn-default">Результати</a></li>
+					</ul>-->
+					<div class="side-bar">
+						<button type="button" class="btn btn-danger btn-block">Список тестів</button>
+						<button type="button" class="btn btn-danger btn-block">Додати тест</button>
+						<button type="button" class="btn btn-danger btn-block">Студенти</button>
+						<button type="button" class="btn btn-danger btn-block">Результати</button>
+					</div>
+					<hr>
+				</div><!-- /span-3 -->
 
 				<!-- column 2 -->
-				<h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>
+				<div class="col-sm-7 col-md-5">
+						<div class="panel panel-primary">
+							<div class="panel-heading"><h4>Статистика системи</h4></div>
 
-				<hr>
 
-				<div class="row">
-					<!-- center left-->
-					<div class="col-md-7">
-						<div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
-
-						<hr>
-
-						<div class="panel panel-default">
-							<div class="panel-heading"><h4>Processing Status</h4></div>
-							<div class="panel-body">
-
-								<small>Complete</small>
+								<!--<small>Complete</small>
 								<div class="progress">
 									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
 										<span class="sr-only">72% Complete</span>
@@ -91,64 +186,86 @@
 									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
 										<span class="sr-only">80% Complete</span>
 									</div>
-								</div>
+								</div>-->
 
-							</div><!--/panel-body-->
+
+							<table class="table table-hover statistics">
+								<tr>
+									<td>Зареєстрованих груп:</td>
+									<td>
+										<span class="label label-success">
+											{{ quantityFaculties }}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Зареєстрованих предметів:</td>
+									<td>
+										<span class="label label-success">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Зареєстрованих спеціальностей:</td>
+									<td>
+										<span class="label label-success">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Зареєстрованих факультетів:</td>
+									<td>
+										<span class="label label-success">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td>Зареєстрованих користувачів:</td>
+									<td>
+										<span class="label label-info">0</span>
+									</td>
+								</tr>
+							</table>
+
 						</div><!--/panel-->
+					<hr>
+				</div>
 
-					</div><!--/col-->
-
-					<!--center-right-->
-					<div class="col-md-5">
-
-						<ul class="nav nav-justified">
-							<li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-							<li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-							<li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-							<li><a title="Add Widget" data-toggle="modal" href="#"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
-						</ul>
-
-						<hr>
-
-						<p>
-							This is a responsive dashboard-style layout that uses <a href="http://www.getbootstrap.com">Bootstrap 3</a>. You can use this template as a starting point to create something more unique.
-						</p>
-						<p>
-							Visit the Bootstrap Playground at <a href="http://www.bootply.com">Bootply</a> to tweak this layout, or discover 1000's of Bootstrap code examples and snippets.
-						</p>
-
-						<hr>
-
-						<div class="btn-group btn-group-justified">
-							<a href="#" class="btn btn-info col-sm-3">
-								<i class="glyphicon glyphicon-plus"></i><br>
-								Service
-							</a>
-							<a href="#" class="btn btn-info col-sm-3">
-								<i class="glyphicon glyphicon-cloud"></i><br>
-								Cloud
-							</a>
-							<a href="#" class="btn btn-info col-sm-3">
-								<i class="glyphicon glyphicon-cog"></i><br>
-								Tools
-							</a>
-							<a href="#" class="btn btn-info col-sm-3">
-								<i class="glyphicon glyphicon-question-sign"></i><br>
-								Help
-							</a>
+				<div class="hidden-sm col-md-4">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h4><i class="glyphicon glyphicon-calendar"></i>
+							<span>{{ date | date:'dd.MM.yyyy' }}</span></h4>
 						</div>
+					<!-- left -->
 
-					</div><!--/col-span-6-->
+					<!--<ul class="nav nav-stacked">
+						<li><a href="#"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-link"></i> Links</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-book"></i> Books</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
+					</ul>-->
+						<div class="cal"></div>
+					</div>
+					<hr>
+				</div><!-- /span-3 -->
 
-				</div><!--/row-->
-			</div><!--/col-span-9-->
+			</div><!--/row-->
 
-		</div><!--/row-->
+			<div class="row visible-sm">
+				<div class="col-sm-7 col-sm-offset-5">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4><i class="glyphicon glyphicon-calendar"></i>
+						<span>{{ date | date:'dd.MM.yyyy' }}</span></h4></div>
+					<div class="cal-sm"></div>
+				</div>
+				</div>
+			</div>
 
 
-	</div><!--/container--></div>
-
+		</div><!--/container-->
+	</div><!--
 <script type="text/javascript">
 	document.onmousedown = document.onselectstart = function(e) {
 		if (e.target.tagName === 'BUTTON') {
@@ -157,5 +274,7 @@
 	};
 </script>
 
+<script src="calendar.js"></script>
+
 </body>
-</html>
+</html>-->
