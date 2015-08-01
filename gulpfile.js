@@ -8,15 +8,13 @@ var gulp = require("gulp"),
 	jsHint = require("gulp-jshint"),
 	uglify = require("gulp-uglify"),
 	minifyHTML = require("gulp-minify-html"),
-    rename = require("gulp-rename"),
-    concat = require("gulp-concat"),
+	rename = require("gulp-rename"),
+	concat = require("gulp-concat"),
 	eventStream = require("event-stream");
 
-
 var dist = "dist",
-    distDev = "dist_dev",
-    src = "src";
-
+	distDev = "dist_dev",
+	src = "src";
 
 var vendorSrcJs = [
 	"bower_components/angular/angular.min.js",
@@ -32,43 +30,47 @@ var vendorSrcCss = [
 // Default task
 gulp.task("default", ["watch"]);
 
-
 // SASS task
 gulp.task("sass", function() {
-   gulp.src(src + "/**/*.scss")
-       .pipe(sass().on("error", sass.logError))
-       .pipe(cssLint())
-       .pipe(cssLint.reporter())
-       .pipe(gulp.dest(distDev + "/styles/"))
+	gulp.src(src + "/**/*.scss")
+		.pipe(sass().on("error", sass.logError))
+		.pipe(cssLint())
+		.pipe(cssLint.reporter())
+		.pipe(gulp.dest(distDev + "/app/"))
 });
 
 // HTML task
 gulp.task("html", function() {
-    gulp.src(src + "/index.html")
-        .pipe(gulp.dest(distDev))
+	gulp.src(src + "/index.html")
+		.pipe(gulp.dest(distDev))
+
+});
+// HTML task
+gulp.task("moveHtml", function() {
+	gulp.src('src/**/*.html')
+		.pipe(gulp.dest(distDev));
 
 });
 
 // JS task
 gulp.task("js", function() {
-    gulp.src(src + "/**/*.js")
-        .pipe(concat("app.js"))
-        .pipe(gulp.dest(distDev + "/js"))
+	gulp.src(src + "/**/*.js")
+		.pipe(concat("app.js"))
+		.pipe(gulp.dest(distDev + "/app"))
 
 });
 
 // Vendor CSS and JavaScript
 gulp.task("vendor", function() {
 	return eventStream.merge(
-	gulp.src(vendorSrcCss)
-		.pipe(concat("vendor.min.css"))
-		.pipe(gulp.dest(distDev + "/vendor")),
-	gulp.src(vendorSrcJs)
-		.pipe(concat("vendor.min.js"))
-		.pipe(gulp.dest(distDev + "/vendor"))
+		gulp.src(vendorSrcCss)
+			.pipe(concat("vendor.min.css"))
+			.pipe(gulp.dest(distDev + "/vendor")),
+		gulp.src(vendorSrcJs)
+			.pipe(concat("vendor.min.js"))
+			.pipe(gulp.dest(distDev + "/vendor"))
 	);
 });
-
 
 // Watcher
 gulp.task("watch", function() {
@@ -77,21 +79,19 @@ gulp.task("watch", function() {
 	gulp.watch(src + "/index.html", ["html"]);
 });
 
-
 // Build Developer Version
-gulp.task("build", ["vendor", "sass", "html", "js"]);
-
+gulp.task("build", ['moveHtml', "vendor", "sass", "html", "js"]);
 
 // Build Production Version
 gulp.task("build_production", function() {
 	return eventStream.merge(
-	gulp.src(src + "/*.js")
-		.pipe(concat("app.js"))
-		.pipe(rename({
-			suffix: ".min"
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest(dist + "/js")),
+		gulp.src(src + "/*.js")
+			.pipe(concat("app.js"))
+			.pipe(rename({
+				suffix: ".min"
+			}))
+			.pipe(uglify())
+			.pipe(gulp.dest(dist + "/js")),
 
 		gulp.src(vendorSrcCss)
 			.pipe(minifyCSS())
