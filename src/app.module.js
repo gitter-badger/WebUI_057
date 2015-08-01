@@ -4,7 +4,8 @@
 var ssTest = angular.module('ssTest', [
     'ui.router',
     'authorization',
-    'admin'
+    'admin',
+    'table'
 ]);
 
 ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {

@@ -15,22 +15,22 @@ admin.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvide
         })
         .state('admin.groups', {
             url: '/groups',
-            templateUrl: TABLE_TEMPLATES_URL,
+            templateUrl: URL_FOR_ROUTER + "components/groups/groups.html",
             controller: 'GroupsListCtrl'
         })
         .state('admin.subjects', {
             url: '/subjects',
-            templateUrl: TABLE_TEMPLATES_URL,
+            templateUrl: URL_FOR_ROUTER + "components/subjects/subjects.html",
             controller: 'SubjectsListCtrl'
         })
         .state('admin.specialities', {
             url: '/specialities',
-            templateUrl: TABLE_TEMPLATES_URL,
+            templateUrl: URL_FOR_ROUTER + "components/specialities/specialities.html",
             controller: 'SpecialitiesListCtrl'
         })
         .state('admin.faculties', {
             url: '/faculties',
-            templateUrl: TABLE_TEMPLATES_URL,
+            templateUrl: URL_FOR_ROUTER + "components/faculties/faculties.html",
             controller: 'FacultiesListCtrl'
         })
 }]);
