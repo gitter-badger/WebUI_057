@@ -7,24 +7,28 @@ var admin = angular.module('admin', [
 ]);
 
 admin.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/homeAdmin');
     $stateProvider
-        .state('groups', {
+        .state('admin.home', {
+            url: '/',
+            templateUrl: URL_FOR_ROUTER + "components/homeAdmin/homeAdmin.html"
+        })
+        .state('admin.groups', {
             url: '/groups',
             templateUrl: TABLE_TEMPLATES_URL,
             controller: 'GroupsListCtrl'
         })
-        .state('subjects', {
+        .state('admin.subjects', {
             url: '/subjects',
             templateUrl: TABLE_TEMPLATES_URL,
             controller: 'SubjectsListCtrl'
         })
-        .state('specialities', {
+        .state('admin.specialities', {
             url: '/specialities',
             templateUrl: TABLE_TEMPLATES_URL,
             controller: 'SpecialitiesListCtrl'
         })
-        .state('faculties', {
+        .state('admin.faculties', {
             url: '/faculties',
             templateUrl: TABLE_TEMPLATES_URL,
             controller: 'FacultiesListCtrl'

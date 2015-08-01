@@ -16,7 +16,7 @@ ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvid
             controller: 'AuthorizationCtrl'
         })
         .state('admin', {
-            url: '/homeAdmin',
+            url: '/admin',
             templateUrl: URL_FOR_ROUTER + 'admin/admin.html'
         })/*
         .state('user', {
