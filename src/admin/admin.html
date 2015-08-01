@@ -11,28 +11,7 @@
 	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="admin.module.js"></script>
 	<script src="admin.controller.js"></script>
-	<style>
-		.navbar-brand img {
-			height: 42px;
-			position: relative;
-			bottom: 11px;
-		}
-		h3 span {
-			font-size: 17px;
-		}
-		.cal table, .cal-sm table {
-			margin-bottom: 0;
-		}
-		.cal th, .cal-sm th {
-			color: #337AB7;;
-		}
-		.cal th, .cal td, .cal-sm th, .cal-sm td {
-			text-align: center;
-		}
-		/*#cal th, #cal td {
-			border: 1px solid #79B77D;
-		}*/
-	</style>
+	<script src="admin.service.js"></script>
 </head>
 <body>
 	<div class="adminComponent" ng-controller="AdminCtrl">
@@ -116,7 +95,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-				<h3><i class="glyphicon glyphicon-king"></i> Сторінка адміністратора</h3>
+				<h3 class="admin-title"><i class="glyphicon glyphicon-king"></i> Сторінка
+					адміністратора</h3>
 				<hr>
 				</div>
 			</div>
@@ -125,16 +105,19 @@
 					<!-- left -->
 					<!--<h3><i class="glyphicon glyphicon-briefcase"></i> Toolbox</h3>
 					<hr>-->
-					<ul class="nav nav-stacked">
-						<li><a href="#"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-link"></i> Links</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
-					</ul>
-
+					<!--<ul class="btn-group-vertical">
+						<li class="btn btn-default"><a href="#" class="btn btn-default">Список тестів</a></li>
+						<li><a href="#" class="btn btn-default">Додати тест</a></li>
+						<li><a href="#" class="btn btn-default">Студенти</a></li>
+						<li><a href="#" class="btn btn-default">Результати</a></li>
+					</ul>-->
+					<div class="side-bar">
+						<button type="button" class="btn btn-danger btn-block">Список тестів</button>
+						<button type="button" class="btn btn-danger btn-block">Додати тест</button>
+						<button type="button" class="btn btn-danger btn-block">Студенти</button>
+						<button type="button" class="btn btn-danger btn-block">Результати</button>
+					</div>
+					<hr>
 				</div><!-- /span-3 -->
 
 				<!-- column 2 -->
@@ -163,7 +146,7 @@
 								</div>-->
 
 
-							<table class="table table-hover">
+							<table class="table table-hover statistics">
 								<tr>
 									<td>Зареєстрованих груп:</td>
 									<td>
@@ -199,6 +182,7 @@
 							</table>
 
 						</div><!--/panel-->
+					<hr>
 				</div>
 
 				<div class="hidden-sm col-md-4">
@@ -220,10 +204,11 @@
 					</ul>-->
 						<div class="cal"></div>
 					</div>
+					<hr>
 				</div><!-- /span-3 -->
 
 			</div><!--/row-->
-			<hr>
+
 			<div class="row visible-sm">
 				<div class="col-sm-7 col-sm-offset-5">
 				<div class="panel panel-info">

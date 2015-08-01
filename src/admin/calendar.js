@@ -1,8 +1,9 @@
+/*
 function createCalendar(cl, year, month) {
 	var elem = document.getElementsByClassName(cl)[0];
 	var date = new Date(year, month - 1);
 	var table = '<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>нд</th></tr><tr>';
-	var month = date.getMonth();
+	month = date.getMonth();
 
 	for (var i = 1; i < getDay(date); i++) {
 		table += '<td></td>';
@@ -40,4 +41,4 @@ var calendar = document.getElementsByClassName('cal')[0];
 calendar.getElementsByTagName('table')[0].className = "table table-bordered table-hover";
 
 var calendarSm = document.getElementsByClassName('cal-sm')[0];
-calendarSm.getElementsByTagName('table')[0].className = "table table-bordered table-hover";
+calendarSm.getElementsByTagName('table')[0].className = "table table-bordered table-hover";*/

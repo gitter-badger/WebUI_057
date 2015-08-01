@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SoftServe Testing</title>
     <link rel="stylesheet" href="vendor/vendor.min.css">
+    <link rel="stylesheet"
+            href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/app.css">
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <!--<link rel="icon" type="image/png" href="favicon.ico">-->
+    <link rel='stylesheet'
+            href='http://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic-ext,latin'>
 </head>
 <body>
-    <header ng-include="'components/nav/view.htm'"></header>
     <div ui-view></div>
-    <footer ng-include="''"></footer>
-<script src="vendor/vendor.min.js"></script>
-<script src="js/app.js"></script>
+    <script src="vendor/vendor.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

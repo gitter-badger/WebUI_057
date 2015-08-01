@@ -1,5 +1,5 @@
-auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
-	function($scope, $http, $window) {
+auth.controller("AuthorizationCtrl", ["$scope", "$http", "$state", "$window",
+	function($scope, $http, $state, $window) {
 		$scope.url = "/login/index";
 		$scope.dataLoading = false;
 
@@ -28,7 +28,8 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
 			if (data.response === "ok") {
 				$scope.removeAlarm();
 				setTimeout(function() {
-					$window.location.href = "../admin/admin.html";
+					/*$window.location.href = "../admin/admin.html";*/
+					$state.go('admin');
 				}, 2500);
 			} else {
 				$scope.generateSpanElem();
