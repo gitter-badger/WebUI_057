@@ -4,9 +4,6 @@ html, body {
 body {
 	font-family: Helvetica;
 }
-.main {
-	height: 100%;
-}
 .authComponent {
 	height: 100%;
 }

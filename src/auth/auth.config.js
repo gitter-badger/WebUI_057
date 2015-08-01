@@ -1,4 +1,4 @@
-auth.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+/*auth.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise("/");
 
 	$stateProvider
@@ -6,4 +6,4 @@ auth.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $u
 			url: "/",
 			templateUrl: "view.html"
 		})
-}]);
+}]);*/

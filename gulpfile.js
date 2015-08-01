@@ -39,6 +39,7 @@ gulp.task("sass", function() {
        .pipe(sass().on("error", sass.logError))
        .pipe(cssLint())
        .pipe(cssLint.reporter())
+	   .pipe(concat("app.css"))
        .pipe(gulp.dest(distDev + "/styles/"))
 });
 
@@ -51,7 +52,10 @@ gulp.task("html", function() {
 
 // JS task
 gulp.task("js", function() {
-    gulp.src(src + "/**/*.js")
+    gulp.src(["src/app.config.js", "src/app.module.js", "src/auth/auth.module.js",
+		"src/auth/auth.controller.js", "src/admin/admin.module.js", "src/admin/admin.service.js",
+		"src/admin/admin.controller.js", "src/components/faculties/controller.js",
+		"src/components/specialities/controller.js", "src/components/subjects/controller.js"])
         .pipe(concat("app.js"))
         .pipe(gulp.dest(distDev + "/js"))
 

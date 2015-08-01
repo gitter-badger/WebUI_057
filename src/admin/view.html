@@ -1,0 +1,148 @@
+<div class="adminComponent" ng-controller="AdminCtrl">
+	<!--menu begin-->
+	<nav id="nav" class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img alt="Brand"
+							src="http://dtapi.local/~pupkin/src/assets/images/logo_admin.png"
+							height="28px">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul id="nav-left" class="nav navbar-nav">
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-home"></span>&nbsp;
+							<span class="hidden-sm">Головна</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">Групи</a>
+					</li>
+					<li>
+						<a href="#">Предмети</a>
+					</li>
+					<li>
+						<a href="#">Спеціальності</a>
+					</li>
+					<li>
+						<a href="#">Факультети</a>
+					</li>
+				</ul>
+				<ul id="nav-right" class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-log-out"></span>&nbsp;
+							<span class="hidden-sm">Вийти</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-question-sign"></span>&nbsp;
+							<span class="hidden-sm">Допомога</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--menu end-->
+
+	<!--content begin-->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3 class="admin-title">
+					<i class="glyphicon glyphicon-king"></i> Сторінка адміністратора
+				</h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-md-3">
+				<div class="side-bar">
+					<button type="button" class="btn btn-danger btn-block">Список тестів</button>
+					<button type="button" class="btn btn-danger btn-block">Додати тест</button>
+					<button type="button" class="btn btn-danger btn-block">Студенти</button>
+					<button type="button" class="btn btn-danger btn-block">Результати</button>
+				</div>
+				<hr>
+			</div>
+			<div class="col-sm-7 col-md-5">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4>Статистика системи</h4>
+					</div>
+					<table class="table table-hover statistics">
+						<tr>
+							<td>Зареєстрованих груп:</td>
+							<td>
+								<span class="label label-success">
+									{{ quantityFaculties }}
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих предметів:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих спеціальностей:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих факультетів:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих користувачів:</td>
+							<td>
+								<span class="label label-info">0</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+			</div>
+			<div class="hidden-sm col-md-4">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>
+							<i class="glyphicon glyphicon-calendar"></i>
+							<span>{{ date | date:'dd.MM.yyyy' }}</span>
+						</h4>
+					</div>
+					<div class="cal"></div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div class="row visible-sm">
+			<div class="col-sm-7 col-sm-offset-5">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>
+							<i class="glyphicon glyphicon-calendar"></i>
+							<span>{{ date | date:'dd.MM.yyyy' }}</span>
+						</h4>
+					</div>
+					<div class="cal-sm"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--content end-->
+</div>

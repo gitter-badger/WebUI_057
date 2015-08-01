@@ -64,3 +64,43 @@ ul#nav-right {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+/*tttttttttttttttttt*/
+.navbar-brand img {
+	height: 42px;
+	position: relative;
+	bottom: 11px;
+}
+h3.admin-title {
+	padding-left: 42px;
+	position: relative;
+}
+h3.admin-title i {
+	position: absolute;
+	left: 9px;
+	top: -2px;
+}
+h3 span {
+	font-size: 17px;
+}
+.cal table, .cal-sm table {
+	margin-bottom: 0;
+}
+.cal th, .cal-sm th {
+	color: #337AB7;;
+}
+.cal th, .cal td, .cal-sm th, .cal-sm td {
+	text-align: center;
+}
+table.statistics {
+	height: 225px;
+}
+table.statistics tr td {
+	vertical-align: middle;
+	padding-left: 15px;
+}
+table span {
+	font-size: 14px !important;
+}
+.side-bar button {
+	height: 45px !important;
+}
