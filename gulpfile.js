@@ -15,7 +15,23 @@ var gulp = require("gulp"),
 
 var dist = "dist",
     distDev = "dist_dev",
-    src = "src";
+    src = "src",
+	srcJs = [
+		"src/app.config.js",
+		"src/app.module.js",
+		"src/auth/auth.module.js",
+		"src/auth/auth.controller.js",
+		"src/admin/admin.module.js",
+		"src/admin/admin.service.js",
+		"src/admin/admin.controller.js",
+		"src/components/faculties/controller.js",
+		"src/components/specialities/controller.js",
+		"src/components/subjects/controller.js"
+	],
+	srcHtml = [
+		"src/index.html",
+		"src/admin/admin.html"
+	];
 
 
 var vendorSrcJs = [
@@ -28,6 +44,10 @@ var vendorSrcCss = [
 	"bower_components/bootstrap/dist/css/bootstrap.css",
 	"bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
 ];
+
+var vendorFonts = [
+	"bower_components/bootstrap/dist/fonts/*"
+]
 
 // Default task
 gulp.task("default", ["watch"]);
@@ -45,17 +65,14 @@ gulp.task("sass", function() {
 
 // HTML task
 gulp.task("html", function() {
-    gulp.src(src + "/index.html")
+    gulp.src(srcHtml)
         .pipe(gulp.dest(distDev))
 
 });
 
 // JS task
 gulp.task("js", function() {
-    gulp.src(["src/app.config.js", "src/app.module.js", "src/auth/auth.module.js",
-		"src/auth/auth.controller.js", "src/admin/admin.module.js", "src/admin/admin.service.js",
-		"src/admin/admin.controller.js", "src/components/faculties/controller.js",
-		"src/components/specialities/controller.js", "src/components/subjects/controller.js"])
+    gulp.src(srcJs)
         .pipe(concat("app.js"))
         .pipe(gulp.dest(distDev + "/js"))
 
@@ -69,9 +86,17 @@ gulp.task("vendor", function() {
 		.pipe(gulp.dest(distDev + "/vendor")),
 	gulp.src(vendorSrcJs)
 		.pipe(concat("vendor.min.js"))
-		.pipe(gulp.dest(distDev + "/vendor"))
+		.pipe(gulp.dest(distDev + "/vendor")),
+		gulp.src(vendorFonts)
+			.pipe(gulp.dest(distDev + "/fonts"))
 	);
 });
+
+// IMG
+gulp.task("img", function() {
+	gulp.src(src + "/assets/images/*")
+		.pipe(gulp.dest(distDev + "/images"))
+})
 
 
 // Watcher
@@ -83,7 +108,7 @@ gulp.task("watch", function() {
 
 
 // Build Developer Version
-gulp.task("build", ["vendor", "sass", "html", "js"]);
+gulp.task("build", ["vendor", "sass", "html", "js", "img"]);
 
 
 // Build Production Version
@@ -102,10 +127,10 @@ gulp.task("build_production", function() {
 			.pipe(concat("vendor.min.css"))
 			.pipe(gulp.dest(dist + "/vendor")),
 
-		gulp.src(vendorSrcJs)
+		gulp.src(srcJs)
 			.pipe(uglify())
-			.pipe(concat("vendor.min.js"))
-			.pipe(gulp.dest(dist + "/vendor")),
+			.pipe(concat("app.min.js"))
+			.pipe(gulp.dest(dist + "/js")),
 
 		gulp.src(src + "/**/*.scss")
 			.pipe(sass().on("error", sass.logError))
