@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-var admin = angular.module("admin", []);
-=======
 var admin = angular.module('admin', [
     'ui.router',
     'subject',
@@ -14,7 +11,7 @@ admin.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvide
     $stateProvider
         .state('admin.home', {
             url: '/',
-            templateUrl: URL_FOR_ROUTER + "components/homeAdmin/homeAdmin.html"
+            templateUrl: URL_FOR_ROUTER + "admin/view.html"
         })
         .state('admin.groups', {
             url: '/groups',
@@ -37,4 +34,3 @@ admin.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvide
             controller: 'FacultiesListCtrl'
         })
 }]);
->>>>>>> a11e1287367808cfc080b7015e45a0f1a1288052
