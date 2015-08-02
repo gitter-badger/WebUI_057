@@ -38,6 +38,11 @@
 				templateUrl: TABLE_TEMPLATES_URL,
 				controller: 'FacultiesListCtrl'
 			})
+			.state('addGroups', {
+				url: '/addgroup',
+				templateUrl: 'components/addGroup/addGroup.html',
+				controller: 'AddGroupCtrl',
+				title: 'Додати групу'
+			})
 	}]);
-
 }());

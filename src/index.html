@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk" ng-app="ssTest">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="favicon.ico">
-    <title>SoftServe Testing</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SoftServe Testing</title>
 
 	<!-- build:css vendor/vendor.css -->
 	<!-- bower:css -->
@@ -14,24 +13,27 @@
 	<!-- endbuild -->
 
 	<!-- build:css app/app.css -->
-	<link rel="stylesheet" href="app.css" />
+	<link rel="stylesheet" href="app.css"/>
+	<link rel="stylesheet" href="components/addGroup/addGroup.css"/>
 	<!-- endbuild -->
 </head>
 <body>
-    <header ng-include="'components/nav/nav.html'"></header>
 
-    <div ui-view></div>
+<header ng-include="'components/nav/nav.html'"></header>
 
-	<!-- build:js vendor/vendor.js -->
-	<!-- bower:js -->
+<div ui-view></div>
+
+<!-- build:js vendor/vendor.js -->
+<!-- bower:js -->
 	<script src="../bower_components/angular/angular.js"></script>
 	<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-	<!-- endbower -->
-	<!-- endbuild -->
+<!-- endbower -->
+<!-- endbuild -->
 
-	<!-- build:js app/app.js -->
+<!-- build:js app/app.js -->
 	<script src="app.module.js"></script>
+	<script src="components/addGroup/addGroup.module.js"></script>
 	<script src="app.constant.js"></script>
 	<script src="app.config.js"></script>
 	<script src="app.run.js"></script>
@@ -40,6 +42,8 @@
 	<script src="components/groups/groups.controller.js"></script>
 	<script src="components/specialities/specialities.controller.js"></script>
 	<script src="components/subjects/subjects.controller.js"></script>
-	<!-- endbuild -->
+	<script src="components/addGroup/addGroup.controller.js"></script>
+	<script src="components/modal/modal.controller.js"></script>
+<!-- endbuild -->
 </body>
 </html>

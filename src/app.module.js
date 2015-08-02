@@ -6,6 +6,8 @@
 		'subject',
 		'faculty',
 		'speciality',
-		'group'
+		'group',
+		'addGroup',
+		'ui.bootstrap'
 	]);
 }());

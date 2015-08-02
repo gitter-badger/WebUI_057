@@ -1,0 +1,13 @@
+<div class="modal-header">
+	<h3 class="modal-title">{{modalData.title}}</h3>
+</div>
+<div class="modal-body">
+	{{modalData.log}}
+</div>
+<div class="modal-footer">
+	<button ng-if="!modalData.groupId" class="btn btn-primary" ng-click="cancel()">OK</button>
+	<a ng-if="modalData.groupId" class="btn btn-primary"
+			ng-href="/#/groups/{{modalData.groupId}}">Continue</a>
+	<button ng-if="modalData.groupId" class="btn btn-warning" ng-click="cancel()">Cancel
+	</button>
+</div>

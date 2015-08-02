@@ -1,0 +1,59 @@
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<form class="add-group-form" name="addGroupForm"
+						ng-class="{true: 'loading'}[formSubmitSend]"
+						ng-submit="addGroupForm.$valid && addFaculty()" novalidate>
+					<h1>Добавити групу</h1>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 form-group"
+								ng-class="{true: 'has-error'}[formSubmited && addGroupForm.facultyId.$invalid]">
+							<label class="control-label">Faculty</label>
+							<select class="form-control"
+									ng-options="faculty.faculty_id as faculty.faculty_name for faculty in faculties"
+									ng-model="group.faculty_id" name="facultyId" required>
+								<option selected value="">Select Faculty</option>
+							</select>
+
+							<div class="alert alert-danger" role="alert"
+									ng-show="formSubmited && addGroupForm.facultyId.$invalid">Faculty of group is
+								required.
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 form-group"
+								ng-class="{true: 'has-error'}[formSubmited && addGroupForm.specialityId.$invalid]">
+							<label class="control-label">Speciality</label>
+							<select class="form-control"
+									ng-options="speciality.speciality_id as speciality.speciality_name + ' (' + speciality.speciality_code + ')' for speciality in specialities"
+									ng-model="group.speciality_id" name="specialityId" required>
+								<option selected value="">Select Speciality</option>
+							</select>
+
+							<div class="alert alert-danger" role="alert"
+									ng-show="formSubmited && addGroupForm.specialityId.$invalid">Speciality of group
+								is required.
+							</div>
+						</div>
+					</div>
+					<div class="form-group"
+							ng-class="{true: 'has-error'}[formSubmited && addGroupForm.groupName.$invalid]">
+						<label class="control-label">Name of Group</label>
+						<input type="text" class="form-control" placeholder="..." value="" name="groupName"
+								ng-model="group.group_name"
+								required/>
+
+						<div class="alert alert-danger" role="alert"
+								ng-show="formSubmited && addGroupForm.groupName.$invalid">Name of group is required.
+						</div>
+					</div>
+
+					<button type="submit" ng-click="formSubmited = true" class="btn btn-primary"
+							ng-disabled="formSubmited && addGroupForm.groupName.$invalid || formSubmitSend">Submit
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
