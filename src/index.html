@@ -4,16 +4,42 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="favicon.ico">
     <title>SoftServe Testing</title>
-    <link rel="stylesheet" href="vendor/vendor.min.css">
-    <link rel="stylesheet" href="styles/app.css">
-    <link rel="icon" type="image/png" href="favicon.ico">
+
+	<!-- build:css vendor/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:css app/app.css -->
+	<link rel="stylesheet" href="app.css" />
+	<!-- endbuild -->
 </head>
 <body>
-    <header ng-include="'../src/components/nav/nav.html'"></header>
+    <header ng-include="'components/nav/nav.html'"></header>
+
     <div ui-view></div>
-    <footer ng-include="''"></footer>
-<script src="vendor/vendor.min.js"></script>
-<script src="js/app.js"></script>
+
+	<!-- build:js vendor/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js app/app.js -->
+	<script src="app.module.js"></script>
+	<script src="app.constant.js"></script>
+	<script src="app.config.js"></script>
+	<script src="app.run.js"></script>
+	<script src="components/nav/nav.controller.js"></script>
+	<script src="components/faculties/faculties.controller.js"></script>
+	<script src="components/groups/groups.controller.js"></script>
+	<script src="components/specialities/specialities.controller.js"></script>
+	<script src="components/subjects/subjects.controller.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

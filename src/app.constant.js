@@ -1,2 +1,7 @@
 var BASE_URL = 'http://dtapi.local/';
-var TABLE_TEMPLATES_URL = 'http://dtapi.local/~pupkin/src/templates/table.html';
+var TABLE_TEMPLATES_URL = 'templates/table.html';
+(function() {
+	"use strict";
+	var app = angular.module('ssTest');
+	app.constant('BASE_URL', 'http://dtapi.local/');
+}());

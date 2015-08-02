@@ -4,3 +4,4 @@ node_modules/
 dist/
 dist_dev/
 npm-debug.log
+*.css
