@@ -1,0 +1,17 @@
+<div class="container-fluid" ng-controller="SortTableCtrl">
+    <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+        <div class="row ">
+            <h1>Групи</h1>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary btn-md mybutton">
+                <span class="glyphicon glyphicon-circle-arrow-up"></span>
+                Добавити групу
+            </button>
+            <input type="text" class="search-query mysearch" ng-model="query" placeholder="Пошук">
+        </div>
+        <div class="row">
+            <div ng-include="'http://dtapi.local/~pupkin/src/templates/table.html'"></div>
+        </div>
+    </div>
+</div>

@@ -5,31 +5,30 @@ var ssTest = angular.module('ssTest', [
     'ui.router',
     'authorization',
     'admin',
-    'subjectCtrl',
-    'facultyCtrl',
-    'specialityCtrl'
+    'table'
 ]);
 
 ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
-        .state('login', {
+        .state('auth', {
             url: '/',
-            templateUrl: 'http://dtapi.local/~pupkin/src/auth/view.html'
+            templateUrl: URL_FOR_ROUTER + 'auth/view.html',
+            controller: 'AuthorizationCtrl'
         })
         .state('admin', {
-            url: '/homeAdmin',
-            templateUrl: 'http://dtapi.local/~pupkin/src/admin/view.html'
+            url: '/admin',
+            templateUrl: URL_FOR_ROUTER + 'admin/view.html'
         })
         /*
-         .state('user', {
-         url: '/homeUser',
-         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
-         })
-         .state('groups', {
-         url: '/groups',
-         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
-         })*/
+        .state('user', {
+        url: '/homeUser',
+        templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
+        })
+        .state('groups', {
+        url: '/groups',
+        templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
+        })*/
         .state('subjects', {
             url: '/subjects',
             templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'

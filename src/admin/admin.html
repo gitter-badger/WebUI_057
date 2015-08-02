@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html ng-app="admin">
 <head>
@@ -235,3 +236,55 @@
 
 </body>
 </html>
+=======
+<nav id="nav" class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul id="nav-left" class="nav navbar-nav">
+                <li>
+                    <a ui-sref=".home" href="#/home">
+                        <span class="glyphicon glyphicon-home"></span>&nbsp;
+                        <span class="hidden-sm">Головна</span>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref=".groups" href="http://dtapi.local/~pupkin/dist_dev/#/groups">Групи</a>
+                </li>
+                <li>
+                    <a ui-sref=".subjects" href="http://dtapi.local/~pupkin/dist_dev/#/subjects">Предмети</a>
+                </li>
+                <li>
+                    <a ui-sref=".specialities" href="http://dtapi.local/~pupkin/dist_dev/#/specialities">Спеціальності</a>
+                </li>
+                <li>
+                    <a ui-sref=".faculties" href="http://dtapi.local/~pupkin/dist_dev/#/faculties">Факультети</a>
+                </li>
+            </ul>
+            <ul id="nav-right" class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                        <span class="hidden-sm">Зареєструватися</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-question-sign"></span>&nbsp;
+                        <span class="hidden-sm">Допомога</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div ui-view></div>
+<footer ng-include="''"></footer>
+>>>>>>> a11e1287367808cfc080b7015e45a0f1a1288052
