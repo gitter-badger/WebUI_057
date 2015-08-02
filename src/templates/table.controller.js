@@ -1,5 +1,5 @@
 var table = angular.module('table', []);
-table.controller('SortTableCtrl', ['$scope', function($scope){
+table.controller('SortTableCtrl', ['$scope', function ($scope) {
     $scope.sortField = undefined;
     $scope.reverse = false;
     $scope.sort = function (fieldName) {
@@ -17,7 +17,7 @@ function idDelete(data) {
     for (var i = 0; i < data.length; i++) {
         var obj = [];
         for (var key in data[i]) {
-            if (key.slice(key.length-3, key.length) == '_id') {
+            if (key.slice(key.length - 3, key.length) == '_id') {
                 var idItem = data[i][key];
             } else {
                 obj.push(data[i][key]);
