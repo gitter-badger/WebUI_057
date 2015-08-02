@@ -8,14 +8,13 @@ var gulp = require("gulp"),
 	jsHint = require("gulp-jshint"),
 	uglify = require("gulp-uglify"),
 	minifyHTML = require("gulp-minify-html"),
-    rename = require("gulp-rename"),
-    concat = require("gulp-concat"),
+	rename = require("gulp-rename"),
+	concat = require("gulp-concat"),
 	eventStream = require("event-stream");
 
-
 var dist = "dist",
-    distDev = "dist_dev",
-    src = "src",
+	distDev = "dist_dev",
+	src = "src",
 	srcJs = [
 		"src/app.config.js",
 		"src/app.module.js",
@@ -28,11 +27,7 @@ var dist = "dist",
 		"src/components/specialities/controller.js",
 		"src/components/subjects/controller.js"
 	],
-	srcHtml = [
-		"src/index.html",
-		"src/admin/admin.html"
-	];
-
+	srcHtml = "src/index.html";
 
 var vendorSrcJs = [
 	"bower_components/angular/angular.min.js",
@@ -41,8 +36,7 @@ var vendorSrcJs = [
 ];
 
 var vendorSrcCss = [
-	"bower_components/bootstrap/dist/css/bootstrap.css",
-	"bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
+	"bower_components/bootstrap/dist/css/bootstrap.min.css"
 ];
 
 var vendorFonts = [
@@ -52,41 +46,43 @@ var vendorFonts = [
 // Default task
 gulp.task("default", ["watch"]);
 
-
 // SASS task
 gulp.task("sass", function() {
-   gulp.src(src + "/**/*.scss")
-       .pipe(sass().on("error", sass.logError))
-       .pipe(cssLint())
-       .pipe(cssLint.reporter())
-	   .pipe(concat("app.css"))
-       .pipe(gulp.dest(distDev + "/styles/"))
+	gulp.src(src + "/**/*.scss")
+		.pipe(sass().on("error", sass.logError))
+		.pipe(cssLint())
+		.pipe(cssLint.reporter())
+		.pipe(concat("app.css"))
+		.pipe(gulp.dest(distDev + "/styles/"))
 });
 
 // HTML task
 gulp.task("html", function() {
-    gulp.src(srcHtml)
-        .pipe(gulp.dest(distDev))
+	return eventStream.merge(
+		gulp.src(src + "/**/*.html"))
+			.pipe(gulp.dest(distDev + "/partials"))
+		gulp.src(srcHtml)
+			.pipe(gulp.dest(distDev))
 
 });
 
 // JS task
 gulp.task("js", function() {
-    gulp.src(srcJs)
-        .pipe(concat("app.js"))
-        .pipe(gulp.dest(distDev + "/js"))
+	gulp.src(srcJs)
+		.pipe(concat("app.js"))
+		.pipe(gulp.dest(distDev + "/js"))
 
 });
 
 // Vendor CSS and JavaScript
 gulp.task("vendor", function() {
 	return eventStream.merge(
-	gulp.src(vendorSrcCss)
-		.pipe(concat("vendor.min.css"))
-		.pipe(gulp.dest(distDev + "/vendor")),
-	gulp.src(vendorSrcJs)
-		.pipe(concat("vendor.min.js"))
-		.pipe(gulp.dest(distDev + "/vendor")),
+		gulp.src(vendorSrcCss)
+			.pipe(concat("vendor.min.css"))
+			.pipe(gulp.dest(distDev + "/vendor")),
+		gulp.src(vendorSrcJs)
+			.pipe(concat("vendor.min.js"))
+			.pipe(gulp.dest(distDev + "/vendor")),
 		gulp.src(vendorFonts)
 			.pipe(gulp.dest(distDev + "/fonts"))
 	);
@@ -98,7 +94,6 @@ gulp.task("img", function() {
 		.pipe(gulp.dest(distDev + "/images"))
 })
 
-
 // Watcher
 gulp.task("watch", function() {
 	gulp.watch(src + "/**/*.scss", ["sass"]);
@@ -106,21 +101,19 @@ gulp.task("watch", function() {
 	gulp.watch(src + "/index.html", ["html"]);
 });
 
-
 // Build Developer Version
 gulp.task("build", ["vendor", "sass", "html", "js", "img"]);
-
 
 // Build Production Version
 gulp.task("build_production", function() {
 	return eventStream.merge(
-	gulp.src(src + "/*.js")
-		.pipe(concat("app.js"))
-		.pipe(rename({
-			suffix: ".min"
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest(dist + "/js")),
+		gulp.src(src + "/*.js")
+			.pipe(concat("app.js"))
+			.pipe(rename({
+				suffix: ".min"
+			}))
+			.pipe(uglify())
+			.pipe(gulp.dest(dist + "/js")),
 
 		gulp.src(vendorSrcCss)
 			.pipe(minifyCSS())
