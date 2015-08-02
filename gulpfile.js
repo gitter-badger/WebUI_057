@@ -60,7 +60,7 @@ gulp.task("sass", function() {
 gulp.task("html", function() {
 	return eventStream.merge(
 		gulp.src(src + "/**/*.html"))
-			.pipe(gulp.dest(distDev + "/partials"))
+			.pipe(gulp.dest(distDev + "/partials")),
 		gulp.src(srcHtml)
 			.pipe(gulp.dest(distDev))
 
@@ -92,7 +92,13 @@ gulp.task("vendor", function() {
 gulp.task("img", function() {
 	gulp.src(src + "/assets/images/*")
 		.pipe(gulp.dest(distDev + "/images"))
-})
+});
+
+gulp.task("fonts", function() {
+	gulp.src(src + "/assets/fonts/*")
+		.pipe(gulp.dest(distDev + "/fonts"))
+});
+
 
 // Watcher
 gulp.task("watch", function() {
@@ -102,7 +108,7 @@ gulp.task("watch", function() {
 });
 
 // Build Developer Version
-gulp.task("build", ["vendor", "sass", "html", "js", "img"]);
+gulp.task("build", ["vendor", "sass", "html", "js", "img", "fonts"]);
 
 // Build Production Version
 gulp.task("build_production", function() {
