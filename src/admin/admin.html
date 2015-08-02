@@ -1,17 +1,13 @@
-<!doctype html>
-<html ng-app="admin">
+<!DOCTYPE html>
+<html lang="uk" ng-app="ssTest">
 <head>
-	<title>d-tester</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet"
-			href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="admin.css">
-	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../../bower_components/angular/angular.min.js"></script>
-	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="admin.module.js"></script>
-	<script src="admin.controller.js"></script>
-	<script src="admin.service.js"></script>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SoftServe Testing</title>
+	<link rel="stylesheet" href="vendor/vendor.min.css">
+	<link rel="stylesheet" href="styles/app.css">
+	<!--<link rel="icon" type="image/png" href="favicon.ico">-->
 </head>
 <body>
 	<div class="adminComponent" ng-controller="AdminCtrl">
@@ -42,7 +38,7 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 						<a class="navbar-brand" href="#">
-							<img alt="Brand" src="../assets/images/logo_admin.png" height="28px">
+							<img alt="Brand" src="images/logo_admin.png" height="28px">
 						</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 							data-target="#myNavbar">
@@ -231,7 +227,7 @@
 	};
 </script>
 
-<script src="calendar.js"></script>
-
+	<script src="vendor/vendor.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
