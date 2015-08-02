@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="user">
 <head lang="uk">
 	<title>SOFTSERVE TESTING</title>
 	<meta charset="utf-8">
@@ -11,8 +11,10 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="script/auth.js"></script>
-	<link rel="stylesheet" type="text/css" href="../assets/styles/user.css">
+	<script type="text/javascript" src="user.module.js"></script>
+
+	<script type="text/javascript" src="user.controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="user.css">
 
 
 </head>
@@ -47,17 +49,18 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid">
+	<div class="container-fluid userComponent">
 		<div class="row">
 			<div class="col-xs-12 col-lg-8 col-lg-offset-2">
 				<div class="tableres">
     				<p class="session">SESSION</p>
 
-					<select id="smth" name="smth" >
-						<option value="subject">вища математика</option>
-						<option value="subject">фізика</option>
-						<option value="subject">хімія</option>
+					<div ng-controller="SubjectsUserListCtrl">
+					<select ng-model="subject_name" ng-options="subject.subject_name for subject in subjects" class="smth" name="smth" >
+
 					</select>
+
+					</div>
 
 					<table class="table table-hover table-bordered table-responsive">
 						<thead>
@@ -73,8 +76,7 @@
 						</thead>
 						    <tbody>
 								<tr>
-									<th
-											scope="row"><span
+									<th scope="row"><span
 											class="visible-xs"><b>№ </b></span>1</th>
 									<td><span class="visible-xs"><b>Назва тесту </b></span>Колоквіум 1</td>
 									<td><span class="visible-xs"><b>Дата </b></span>31.07.2015</td>
