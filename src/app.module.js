@@ -5,7 +5,11 @@ var ssTest = angular.module('ssTest', [
     'ui.router',
     'authorization',
     'admin',
-    'table'
+    'user',
+    'table',
+    'subjectCtrl',
+    'facultyCtrl',
+    'specialityCtrl'
 ]);
 
 ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
@@ -29,6 +33,16 @@ ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvid
         url: '/groups',
         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
         })*/
+
+         .state('user', {
+         url: '/homeUser',
+         templateUrl: 'http://dtapi.local/~pupkin/src/user/view.html'
+         })
+        /*.state('groups', {
+         url: '/groups',
+         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
+         })
+         */
         .state('subjects', {
             url: '/subjects',
             templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'

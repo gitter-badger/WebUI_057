@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="user">
+<html ng-app="subjectCtrl">
 <head lang="uk">
 	<title>SOFTSERVE TESTING</title>
 	<meta charset="utf-8">
@@ -11,9 +11,10 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="user.module.js"></script>
+	<script type="text/javascript" src="userTest.module.js"></script>
+	<script type="text/javascript" src="userTest.controller.js"></script>
 
-	<script type="text/javascript" src="user.controller.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="user.css">
 
 
@@ -53,43 +54,30 @@
 		<div class="row">
 			<div class="col-xs-12 col-lg-8 col-lg-offset-2">
 				<div class="tableres">
-    				<p class="session">SESSION</p>
+    				<p class="session">ВАШІ ПРЕДМЕТИ</p>
 
-					<div ng-controller="SubjectsUserListCtrl">
-					<select ng-model="subject_name" ng-options="subject.subject_name for subject in subjects" class="smth" name="smth" >
+					<div class="row" ng-controller="SubjectsListCtrl">
+						<table class="table table-hover table-bordered table-responsive">
+							<thead>
+							<tr>
+								<th><span class="visible-xs"><b>1: </b></span>№</th>
+								<th><span class="visible-xs"><b>1: </b></span>Предмет</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr ng-repeat="subject in subjects">
+								<td>{{$index + 1}}</td>
+								<td><span class="visible-xs"><b>1: </b></span><a href='' ng-click="showTest = !showTest">{{subject.subject_name}} </a></br> {{subject.subject_description}} </br>
+									<span ng-show="showTest">
+									1. Колоквіум 1 | (20 хв) | 2 спроби  | 1 спроба використана  | активний до 12.08.2015  | </br>
+									2. Колоквіум 2 | (45 хв) | 2 спроби  | 0 спроба використано  | активний до 12.11.2015  | </br>
+									3. Колоквіум 3 | (60 хв) | 1 спроба  | 0 спроба використано  | активний до 12.12.2015  | </span></td>
 
-					</select>
-
+							</tr>
+							</tbody>
+						</table>
 					</div>
 
-					<table class="table table-hover table-bordered table-responsive">
-						<thead>
-						<tr>
-							<th><span class="visible-xs"></span>№</th>
-							<th><span class="visible-xs"></span>Назва тесту</th>
-							<th><span class="visible-xs"></span>Дата</th>
-							<th><span class="visible-xs"></span>Час початку</th>
-							<th><span class="visible-xs"></span>Час закінчення</th>
-							<th><span class="visible-xs"></span>Оцінка</th>
-							<th><span class="visible-xs"></span>Предмет</th>
-						</tr>
-						</thead>
-						    <tbody>
-								<tr>
-									<th scope="row"><span
-											class="visible-xs"><b>№ </b></span>1</th>
-									<td><span class="visible-xs"><b>Назва тесту </b></span>Колоквіум 1</td>
-									<td><span class="visible-xs"><b>Дата </b></span>31.07.2015</td>
-									<td><span class="visible-xs"><b>Час початку </b></span>9.00</td>
-									<td><span class="visible-xs"><b>Час закінчення </b></span>9.45</td>
-									<td><span class="visible-xs"><b>Оцінка </b></span>90</td>
-									<td><span class="visible-xs"><b>Предмет </b></span>ТОЕ</td>
-								</tr>
-
-
-						    </tbody>
-					</table>
-		<p> ТУТ БУДУТЬ ГРАФІКИ </p>
 
 	</div>
 			</div>
