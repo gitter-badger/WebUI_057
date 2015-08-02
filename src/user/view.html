@@ -1,0 +1,51 @@
+
+	<!--content begin-->
+	<div class="container-fluid userComponent">
+		<div class="row">
+			<div class="col-xs-12 col-lg-8 col-lg-offset-2">
+				<div class="tableres">
+    				<p class="session">SESSION</p>
+
+					<div ng-controller="SubjectsUserListCtrl">
+					<select ng-model="subject_name" ng-options="subject.subject_name for subject in subjects" class="smth" name="smth" >
+
+					</select>
+
+					</div>
+
+					<table class="table table-hover table-bordered table-responsive">
+						<thead>
+						<tr>
+							<th><span class="visible-xs"></span>№</th>
+							<th><span class="visible-xs"></span>Назва тесту</th>
+							<th><span class="visible-xs"></span>Дата</th>
+							<th><span class="visible-xs"></span>Час початку</th>
+							<th><span class="visible-xs"></span>Час закінчення</th>
+							<th><span class="visible-xs"></span>Оцінка</th>
+							<th><span class="visible-xs"></span>Предмет</th>
+						</tr>
+						</thead>
+						    <tbody>
+								<tr>
+									<th scope="row"><span
+											class="visible-xs"><b>№ </b></span>1</th>
+									<td><span class="visible-xs"><b>Назва тесту </b></span>Колоквіум 1</td>
+									<td><span class="visible-xs"><b>Дата </b></span>31.07.2015</td>
+									<td><span class="visible-xs"><b>Час початку </b></span>9.00</td>
+									<td><span class="visible-xs"><b>Час закінчення </b></span>9.45</td>
+									<td><span class="visible-xs"><b>Оцінка </b></span>90</td>
+									<td><span class="visible-xs"><b>Предмет </b></span>ТОЕ</td>
+								</tr>
+
+
+						    </tbody>
+					</table>
+		<p> ТУТ БУДУТЬ ГРАФІКИ </p>
+
+	              </div>
+			</div>
+		</div>
+	</div>
+	<!--content end-->
+
+
