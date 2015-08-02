@@ -29,7 +29,7 @@ authorization.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
             if (data.response === "ok") {
                 $scope.removeAlarm();
                 setTimeout(function() {
-                    $window.location.href = 'http://dtapi.local/~pupkin/dist_dev/#/admin';
+                    $window.location.href = 'http://dtapi.local/~pupkin/dist_dev/#/admin/';
                 }, 2500);
             } else {
                 $scope.generateSpanElem();
