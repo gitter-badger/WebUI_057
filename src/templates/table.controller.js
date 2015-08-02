@@ -17,17 +17,14 @@ function idDelete(data) {
     for (var i = 0; i < data.length; i++) {
         var obj = [];
         for (var key in data[i]) {
-            if (key.slice(key.length-3, key.length) == '_id') continue;
-            obj.push(data[i][key]);
+            if (key.slice(key.length-3, key.length) == '_id') {
+                var idItem = data[i][key];
+            } else {
+                obj.push(data[i][key]);
+            }
         }
+        obj.push(idItem);
         arr.push(obj);
     }
     return arr;
-}
-
-function markIndexes(data) {
-    for(var i = 0; i < data.length; i++) {
-        data[i][2] = i;
-    }
-    return data;
 }
