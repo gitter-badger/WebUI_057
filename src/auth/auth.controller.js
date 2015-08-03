@@ -1,6 +1,6 @@
 var authorization = angular.module("authorization", []);
-authorization.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
-    function($scope, $http, $window) {
+authorization.controller("AuthorizationCtrl", ["$scope", "$http", "$state", "$window",
+    function($scope, $http, $state, $window) {
         $scope.url = "/login/index";
         $scope.dataLoading = false;
 
@@ -29,7 +29,7 @@ authorization.controller("AuthorizationCtrl", ["$scope", "$http", "$window",
             if (data.response === "ok") {
                 $scope.removeAlarm();
                 setTimeout(function() {
-                    $window.location.href = 'http://dtapi.local/~pupkin/dist_dev/#/admin/';
+                    $state.go('admin.home');
                 }, 2500);
             } else {
                 $scope.generateSpanElem();
