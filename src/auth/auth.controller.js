@@ -26,7 +26,7 @@ angular.module("authorization")
 		$scope.checkResponse = function(data) {
 			if (data.response === "ok") {
 				$scope.removeAlarm();
-				$state.go('admin');
+				$state.go('admin.home');
 			} else {
 				$scope.generateSpanElem();
 				$scope.dataLoading = false;
