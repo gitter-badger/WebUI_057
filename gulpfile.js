@@ -23,7 +23,9 @@ var dist = "dist",
 		"src/auth/auth.controller.js",
 		"src/admin/admin.module.js",
 		"src/admin/admin.service.js",
-		"src/admin/admin.controller.js"
+		"src/admin/admin.controller.js",
+		"src/user/user.module.js",
+		"src/user/user.controller.js"
 		/*"src/components/faculties/controller.js",
 		"src/components/specialities/controller.js",
 		"src/components/subjects/controller.js"*/

@@ -4,9 +4,9 @@
 var ssTest = angular.module('ssTest', [
     'ui.router',
     'authorization',
-    'admin'
-    /*'user',
-    'table'*/
+    'admin',
+    'user'
+    /*'table'*/
     /*'subjectCtrl',
     'facultyCtrl',
     'specialityCtrl'*/
@@ -22,12 +22,11 @@ ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvid
         .state('admin', {
             url: '/admin',
             templateUrl: URL_FOR_ROUTER + 'partials/admin/view.html'
-        });
-        /*
-        .state('user', {
-        url: '/homeUser',
-        templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
         })
+        .state('user', {
+            url: '/user',
+            templateUrl: URL_FOR_ROUTER + 'partials/user/view.html'
+        });/*
         .state('groups', {
         url: '/groups',
         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
