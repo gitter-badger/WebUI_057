@@ -1,4 +1,4 @@
-admin.controller("AdminCtrl", ["$scope", "$http", 'calendar', function($scope, $http, calendar) {
+admin.controller("AdminCtrl", ["$scope", "$http", 'Calendar', function($scope, $http, Calendar) {
 	$http.get('http://dtapi.local/faculty/countRecords').
 		success(function(data, status, headers, config) {
 			$scope.quantityFaculties = data.numberOfRecords;
@@ -12,5 +12,5 @@ admin.controller("AdminCtrl", ["$scope", "$http", 'calendar', function($scope, $
 
 	$scope.date = new Date();
 
-	calendar();
+	Calendar();
 }]);

@@ -4,9 +4,9 @@
 var ssTest = angular.module('ssTest', [
     'ui.router',
     'authorization',
-    'admin',
-    'user',
-    'table'
+    'admin'
+    /*'user',
+    'table'*/
     /*'subjectCtrl',
     'facultyCtrl',
     'specialityCtrl'*/
@@ -17,12 +17,12 @@ ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvid
     $stateProvider
         .state('auth', {
             url: '/',
-            templateUrl: /*URL_FOR_ROUTER + 'auth/view.html'*/'dtapi.local/~pupkin/dist_dev/partials/auth/view.html'
+            templateUrl: URL_FOR_ROUTER + 'partials/auth/view.html'
         })
         .state('admin', {
             url: '/admin',
-            templateUrl: URL_FOR_ROUTER + 'admin/view.html'
-        })
+            templateUrl: URL_FOR_ROUTER + 'partials/admin/view.html'
+        });
         /*
         .state('user', {
         url: '/homeUser',
@@ -33,10 +33,10 @@ ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvid
         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
         })*/
 
-         .state('user', {
+         /*.state('user', {
          url: '/homeUser',
          templateUrl: URL_FOR_ROUTER + 'user/view.html'
-         });
+         });*/
         /*.state('groups', {
          url: '/groups',
          templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'

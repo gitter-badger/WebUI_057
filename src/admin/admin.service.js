@@ -1,4 +1,4 @@
-admin.factory('calendar', function() {
+admin.factory('Calendar', function() {
 	return function() {
 		function createCalendar(cl, year, month) {
 			var elem = document.getElementsByClassName(cl)[0];
