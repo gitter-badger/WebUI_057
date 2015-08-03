@@ -4,20 +4,6 @@
 	app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
-			/* .state('login', {
-			 url: '/',
-			 templateUrl: BASE_URL_FOR_ROUTER + 'auth/view.html',
-			 controller: 'AuthorizationCtrl'
-			 })
-			 .state('admin', {
-			 url: '/homeAdmin',
-			 templateUrl: BASE_URL_FOR_ROUTER + 'admin/view.html',
-			 controller: 'AdminCtrl'
-			 })
-			 .state('user', {
-			 url: '/homeUser',
-			 templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
-			 })*/
 			.state('groups', {
 				url: '/groups',
 				templateUrl: TABLE_TEMPLATES_URL,
@@ -45,4 +31,25 @@
 				title: 'Додати групу'
 			})
 	}]);
+
+
+	app.factory('Rest', ['$resource', function ($resource) {
+		return $resource(':entity/:action/:id', {}, {
+			getAll: {method: 'GET', params: {entity: "@entity", action:"getRecords"}},
+			get: {method: 'GET', params: {entity: "@entity", action:"getRecords", id:"@id"}},
+			getRange: {method: 'GET', url: 'group/:action/:qnty/:indent', params: {entity: "@entity", action:"getRecords", qnty:"@qnty", indent:"@indent"}},
+			count: {method: 'GET', params: {entity: "@entity", action:"countRecords"}},
+			update: {method: 'POST', params: {entity: "@entity", action:"update", id:"@id"}},
+			delete: {method: 'POST', params: {entity: "@entity", action:"del", id:"@id"}},
+			add: {method: 'POST', params: {entity: "@entity", action:"insertData"}}
+		});
+	}]);
+
+	Rest.getAll({
+		entity: 'group'
+	});
+	Rest.getAll({
+		entity: 'group',
+		id: 1
+	});
 }());

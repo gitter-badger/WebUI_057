@@ -63,7 +63,7 @@
 						open({
 							title: "Success!",
 							log: "You have added new group \"" + $scope.group.group_name + "\"! Would you like to continue your work with it?",
-							groupId: data.group_id
+							groupId: data.id
 						});
 						resetForm();
 					} else {

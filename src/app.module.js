@@ -8,6 +8,7 @@
 		'speciality',
 		'group',
 		'addGroup',
-		'ui.bootstrap'
+		'ui.bootstrap',
+		'ngResource'
 	]);
 }());
