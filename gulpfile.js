@@ -16,22 +16,9 @@ var dist = "dist",
 	distDev = "dist_dev",
 	src = "src",
 	srcJs = [
-		"src/app.constant.js",
-		"src/app.module.js",
-		"src/auth/auth.module.js",
-		"src/admin/admin.module.js",
-		"src/auth/auth.controller.js",
-		"src/admin/admin.controller.js",
-		"src/admin/admin.service.js",
-		"src/templates/table.controller.js",
-		"src/components/faculties/faculties.controller.js",
-		"src/components/specialities/specialities.controller.js",
-		"src/components/subjects/subjects.controller.js",
-		"src/components/groups/groups.controller.js",
-		"src/app.config.js"
-		/*"src/user/user.module.js"
-		"src/user/user.controller.js"
-		*/
+		"src/**/*.config.js",
+		"src/**/*.module.js",
+		"src/**/*.js"
 	],
 	srcHtml = "src/index.html";
 
@@ -65,12 +52,10 @@ gulp.task("sass", function() {
 // HTML task
 gulp.task("html", function() {
 	return eventStream.merge(
-		gulp.src(src + "/**/*.html")
-			.pipe(gulp.dest(distDev + "/partials")),
+		gulp.src(src + "/**/*.html"))
+		.pipe(gulp.dest(distDev + "/partials")),
 		gulp.src(srcHtml)
 			.pipe(gulp.dest(distDev))
-	);
-
 });
 
 // JS task
@@ -105,7 +90,6 @@ gulp.task("fonts", function() {
 	gulp.src(src + "/assets/fonts/*")
 		.pipe(gulp.dest(distDev + "/fonts"))
 });
-
 
 // Watcher
 gulp.task("watch", function() {
