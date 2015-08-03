@@ -4,18 +4,15 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a ui-sref=".home" href="" class="navbar-brand">
-					<img alt="Brand"
-							src="http://dtapi.local/~pupkin/src/assets/images/logo_admin.png"
-							height="28px">
+					<img alt="Brand" src="images/logo_admin.png" height="28px">
 				</a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar">
+				<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
+			<div class="collapse navbar-collapse" id="myNavbar" collapse="navCollapsed">
 				<ul id="nav-left" class="nav navbar-nav">
 					<li>
 						<a ui-sref=".home" href="">
@@ -38,7 +35,7 @@
 				</ul>
 				<ul id="nav-right" class="nav navbar-nav navbar-right">
 					<li>
-						<a ui-sref=".auth" href="">
+						<a ui-sref="auth" href="">
 							<span class="glyphicon glyphicon-log-out"></span>&nbsp;
 							<span class="hidden-sm">Вийти</span>
 						</a>

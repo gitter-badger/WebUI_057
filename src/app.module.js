@@ -10,7 +10,7 @@ angular.module('ssTest')
 		$stateProvider
 			.state('auth', {
 				url: '/',
-				templateUrl: 'partials/auth/auth.html'
+				templateUrl: 'partials/auth/view.html'
 			})
 			.state('admin', {
 				url: '/admin',
