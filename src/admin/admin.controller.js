@@ -1,4 +1,5 @@
-admin.controller("AdminCtrl", ["$scope", "$http", 'Calendar', function($scope, $http, Calendar) {
+angular.module('admin').controller("AdminCtrl", ["$scope", "$http", function($scope, $http) {
+
 	$http.get('http://dtapi.local/faculty/countRecords').
 		success(function(data, status, headers, config) {
 			$scope.quantityFaculties = data.numberOfRecords;
@@ -12,5 +13,4 @@ admin.controller("AdminCtrl", ["$scope", "$http", 'Calendar', function($scope, $
 
 	$scope.date = new Date();
 
-	Calendar();
 }]);

@@ -1,86 +1,90 @@
-<div class="adminComponent" ng-controller="AdminCtrl">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h3 class="admin-title"><i class="glyphicon glyphicon-king"></i> Сторінка
-                    адміністратора</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5 col-md-3">
-                <div class="side-bar">
-                    <button type="button" class="btn btn-danger btn-block">Список тестів</button>
-                    <button type="button" class="btn btn-danger btn-block">Додати тест</button>
-                    <button type="button" class="btn btn-danger btn-block">Студенти</button>
-                    <button type="button" class="btn btn-danger btn-block">Результати</button>
-                </div>
-                <hr>
-            </div>
-            <div class="col-sm-7 col-md-5">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><h4>Статистика системи</h4></div>
-                    <table class="table table-hover statistics">
-                        <tr>
-                            <td>Зареєстрованих груп:</td>
-                            <td>
+<div class="adminComponent">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3 class="admin-title"><i class="glyphicon glyphicon-king"></i> Сторінка
+					адміністратора</h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 col-md-3">
+				<div class="side-bar">
+					<button type="button" class="btn btn-danger btn-block">Список тестів</button>
+					<button type="button" class="btn btn-danger btn-block">Додати тест</button>
+					<button type="button" class="btn btn-danger btn-block">Студенти</button>
+					<button type="button" class="btn btn-danger btn-block">Результати</button>
+				</div>
+				<hr>
+			</div>
+			<div class="col-sm-7 col-md-5">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><h4>Статистика системи</h4></div>
+					<table class="table table-hover statistics">
+						<tr>
+							<td>Зареєстрованих груп:</td>
+							<td>
 										<span class="label label-success">
 											{{ quantityFaculties }}
 										</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Зареєстрованих предметів:</td>
-                            <td>
-                                <span class="label label-success">0</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Зареєстрованих спеціальностей:</td>
-                            <td>
-                                <span class="label label-success">0</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Зареєстрованих факультетів:</td>
-                            <td>
-                                <span class="label label-success">0</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Зареєстрованих користувачів:</td>
-                            <td>
-                                <span class="label label-info">0</span>
-                            </td>
-                        </tr>
-                    </table>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих предметів:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих спеціальностей:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих факультетів:</td>
+							<td>
+								<span class="label label-success">0</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Зареєстрованих користувачів:</td>
+							<td>
+								<span class="label label-info">0</span>
+							</td>
+						</tr>
+					</table>
 
-                </div><!--/panel-->
-                <hr>
-            </div>
+				</div>
+				<!--/panel-->
+				<hr>
+			</div>
 
-            <div class="hidden-sm col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-calendar"></i>
-                            <span>{{ date | date:'dd.MM.yyyy' }}</span></h4>
-                    </div>
-                    <div class="cal"></div>
-                </div>
-                <hr>
-            </div><!-- /span-3 -->
+			<div class="hidden-sm col-md-4">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4><i class="glyphicon glyphicon-calendar"></i> <span>{{ date | date:'dd.MM.yyyy' }}</span>
+						</h4>
+					</div>
+					<div class="cal"></div>
+				</div>
+				<hr>
+			</div>
+			<!-- /span-3 -->
 
-        </div><!--/row-->
+		</div>
+		<!--/row-->
 
-        <div class="row visible-sm">
-            <div class="col-sm-7 col-sm-offset-5">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-calendar"></i>
-                            <span>{{ date | date:'dd.MM.yyyy' }}</span></h4></div>
-                    <div class="cal-sm"></div>
-                </div>
-            </div>
-        </div>
-    </div><!--/container-->
+		<div class="row visible-sm">
+			<div class="col-sm-7 col-sm-offset-5">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4><i class="glyphicon glyphicon-calendar"></i> <span>{{ date | date:'dd.MM.yyyy' }}</span>
+						</h4></div>
+					<div class="cal-sm"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/container-->
 </div>

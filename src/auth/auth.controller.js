@@ -5,21 +5,19 @@ angular.module("authorization")
 		$scope.dataLoading = false;
 
 		$scope.login = function() {
-			$scope.authData = JSON.stringify({
+			$scope.authData = {
 				username: $scope.userName,
 				password: $scope.password
-			});
+			};
 			$scope.dataLoading = true;
 
-			$http.post($scope.url, $scope.authData)
+			$http.post( BASE_URL + $scope.url, $scope.authData)
 				.success(function(data, status) {
 					$scope.status = status;
 					$scope.data = data;
 					$scope.checkResponse(data);
 				})
 				.error(function(data, status) {
-					alert($window.location.href);
-					alert("Error");
 					$scope.status = status || "Запит відхилено.";
 					$scope.data = data;
 				});
@@ -28,7 +26,7 @@ angular.module("authorization")
 		$scope.checkResponse = function(data) {
 			if (data.response === "ok") {
 				$scope.removeAlarm();
-				$state.go('admin.home');
+				$state.go('admin');
 			} else {
 				$scope.generateSpanElem();
 				$scope.dataLoading = false;

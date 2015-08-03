@@ -17,18 +17,21 @@ var dist = "dist",
 	src = "src",
 	srcJs = [
 		"src/app.constant.js",
-		"src/app.config.js",
 		"src/app.module.js",
 		"src/auth/auth.module.js",
-		"src/auth/auth.controller.js",
 		"src/admin/admin.module.js",
-		"src/admin/admin.service.js",
+		"src/auth/auth.controller.js",
 		"src/admin/admin.controller.js",
-		"src/user/user.module.js",
+		"src/admin/admin.service.js",
+		"src/templates/table.controller.js",
+		"src/components/faculties/faculties.controller.js",
+		"src/components/specialities/specialities.controller.js",
+		"src/components/subjects/subjects.controller.js",
+		"src/components/groups/groups.controller.js",
+		"src/app.config.js"
+		/*"src/user/user.module.js"
 		"src/user/user.controller.js"
-		/*"src/components/faculties/controller.js",
-		"src/components/specialities/controller.js",
-		"src/components/subjects/controller.js"*/
+		*/
 	],
 	srcHtml = "src/index.html";
 
