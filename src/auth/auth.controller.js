@@ -1,5 +1,6 @@
-auth.controller("AuthorizationCtrl", ["$scope", "$http", "$state",
-	function($scope, $http, $state, $window) {
+angular.module("authorization")
+	.controller("AuthorizationCtrl", ["$scope", "$http", "$state",
+	function($scope, $http, $state) {
 		$scope.url = "/login/index";
 		$scope.dataLoading = false;
 
@@ -27,9 +28,7 @@ auth.controller("AuthorizationCtrl", ["$scope", "$http", "$state",
 		$scope.checkResponse = function(data) {
 			if (data.response === "ok") {
 				$scope.removeAlarm();
-				setTimeout(function() {
-					$state.go('admin');
-				}, 2500);
+				$state.go('admin.home');
 			} else {
 				$scope.generateSpanElem();
 				$scope.dataLoading = false;

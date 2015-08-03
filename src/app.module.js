@@ -1,58 +1,7 @@
-'use strict';
-
-/* Module */
-var ssTest = angular.module('ssTest', [
-    'ui.router',
-    'authorization',
-    'admin',
-    'user'
-    /*'table'*/
-    /*'subjectCtrl',
-    'facultyCtrl',
-    'specialityCtrl'*/
+"use strict";
+angular.module('ssTest', [
+	'ui.router',
+	'authorization',
+	'admin',
+	'user'
 ]);
-
-ssTest.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-        .state('auth', {
-            url: '/',
-            templateUrl: URL_FOR_ROUTER + 'partials/auth/view.html'
-        })
-        .state('admin', {
-            url: '/admin',
-            templateUrl: URL_FOR_ROUTER + 'partials/admin/view.html'
-        })
-        .state('user', {
-            url: '/user',
-            templateUrl: URL_FOR_ROUTER + 'partials/user/view.html'
-        });/*
-        .state('groups', {
-        url: '/groups',
-        templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
-        })*/
-
-         /*.state('user', {
-         url: '/homeUser',
-         templateUrl: URL_FOR_ROUTER + 'user/view.html'
-         });*/
-        /*.state('groups', {
-         url: '/groups',
-         templateUrl: BASE_URL_FOR_ROUTER + 'subjects/view.html'
-         })
-         */
-        /*.state('subjects', {
-            url: '/subjects',
-            templateUrl: BASE_URL_FOR_ROUTER + 'partials/subjects/view.html'
-        })
-        .state('specialities', {
-            url: '/specialities',
-            templateUrl: BASE_URL_FOR_ROUTER + 'partials/specialities/view.html'
-        })
-        .state('faculties', {
-            url: '/faculties',
-            templateUrl: BASE_URL_FOR_ROUTER + 'partials/faculties/view.html'
-        })*/
-}]);
-
-
