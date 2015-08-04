@@ -16,8 +16,8 @@ var dist = "dist",
 	distDev = "dist_dev",
 	src = "src",
 	srcJs = [
-		"src/**/*.config.js",
 		"src/**/*.module.js",
+		"src/**/*.config.js",
 		"src/**/*.js"
 	],
 	srcHtml = "src/index.html";
