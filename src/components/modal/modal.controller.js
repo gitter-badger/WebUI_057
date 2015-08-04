@@ -1,8 +1,8 @@
 (function() {
 	"use strict";
-	var app = angular.module('ssTest');
 
-	var ModalCtrl = function($scope, $modalInstance, data) {
+
+	angular.module('addGroup').controller('ModalCtrl', ["$scope", "$modalInstance", 'data', function($scope, $modalInstance, data) {
 
 		$scope.modalData = data;
 
@@ -13,8 +13,6 @@
 		$scope.cancel = function() {
 			$modalInstance.dismiss('cancel');
 		};
-	};
-
-	app.controller('ModalCtrl', ["$scope", "$modalInstance", 'data', ModalCtrl]);
+	}]);
 
 }());

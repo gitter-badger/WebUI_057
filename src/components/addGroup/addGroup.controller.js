@@ -18,7 +18,7 @@
 		var open = function(data) {
 			$modal.open({
 				animation: true,
-				templateUrl: 'components/modal/modal.html',
+				templateUrl: 'partials/components/modal/modal.html',
 				controller: 'ModalCtrl',
 				resolve: {
 					data: function() {

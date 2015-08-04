@@ -5,7 +5,8 @@ angular.module('admin', [
 	'speciality',
 	'group',
 	'addGroup',
-	'table'
+	'table',
+	'ui.bootstrap'
 ]);
 
 angular.module('admin').config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
